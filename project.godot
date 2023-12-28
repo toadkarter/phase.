@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Best of Both Worlds"
+run/main_scene="res://Scenes/Level/level.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,7 +20,6 @@ config/icon="res://icon.svg"
 window/size/viewport_width=700
 window/size/viewport_height=700
 window/size/resizable=false
-window/size/borderless=true
 
 [rendering]
 
