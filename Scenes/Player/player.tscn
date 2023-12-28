@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://bgx0u804veai4"]
+
+[ext_resource type="Texture2D" uid="uid://ckw31n3e6yhno" path="res://Assets/Art/Player/hero4.png" id="1_oewqs"]
+[ext_resource type="Texture2D" uid="uid://ftqunq48r60e" path="res://Assets/Art/Player/hero6.png" id="2_fhoxh"]
+[ext_resource type="Texture2D" uid="uid://byvpwkbqeulvn" path="res://Assets/Art/Player/hero1.png" id="3_fqv0i"]
+[ext_resource type="Texture2D" uid="uid://d0arxvlvou2q0" path="res://Assets/Art/Player/hero3.png" id="4_fk35v"]
+[ext_resource type="Texture2D" uid="uid://dfhdpq7jn86i3" path="res://Assets/Art/Player/hero11.png" id="5_28w7w"]
+[ext_resource type="Texture2D" uid="uid://chbut8jgbwl5c" path="res://Assets/Art/Player/hero10.png" id="6_x1uwj"]
+[ext_resource type="Texture2D" uid="uid://uunyfmb651a" path="res://Assets/Art/Player/hero2.png" id="7_q0ywl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rylp0"]
+atlas = ExtResource("7_q0ywl")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hca1j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_oewqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fhoxh")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fqv0i")
+}],
+"loop": true,
+"name": &"down_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_fk35v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_28w7w")
+}],
+"loop": true,
+"name": &"side",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_x1uwj")
+}],
+"loop": true,
+"name": &"side_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rylp0")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k8ykr"]
+radius = 6.0
+height = 16.0
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hca1j")
+animation = &"side_idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_k8ykr")
