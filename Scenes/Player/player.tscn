@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://bgx0u804veai4"]
+[gd_scene load_steps=12 format=3 uid="uid://bgx0u804veai4"]
 
+[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_hoaml"]
 [ext_resource type="Texture2D" uid="uid://ckw31n3e6yhno" path="res://Assets/Art/Player/hero4.png" id="1_oewqs"]
 [ext_resource type="Texture2D" uid="uid://ftqunq48r60e" path="res://Assets/Art/Player/hero6.png" id="2_fhoxh"]
 [ext_resource type="Texture2D" uid="uid://byvpwkbqeulvn" path="res://Assets/Art/Player/hero1.png" id="3_fqv0i"]
@@ -66,6 +67,7 @@ radius = 6.0
 height = 16.0
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_hoaml")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hca1j")
