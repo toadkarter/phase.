@@ -5,7 +5,7 @@ class_name Level
 
 var is_in_first_world: bool = true
 
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var animation_player: AnimationPlayer = $CanvasLayer/AnimationPlayer
 
 func _ready():	
 	if orbs.is_empty():

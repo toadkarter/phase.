@@ -6,6 +6,43 @@
 [ext_resource type="PackedScene" uid="uid://bg31smg0omldk" path="res://Scenes/Environment/Rock/rock.tscn" id="3_0xah0"]
 [ext_resource type="PackedScene" uid="uid://dt6u0rb8fw1ky" path="res://Scenes/Items/Orb/orb.tscn" id="4_imv7b"]
 
+[sub_resource type="Animation" id="Animation_fbx3o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/WorldFilter:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bqoy1"]
+resource_name = "fade_in"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/WorldFilter:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7nay6"]
+_data = {
+"RESET": SubResource("Animation_fbx3o"),
+"start_second_world": SubResource("Animation_bqoy1")
+}
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rnmy4"]
 texture = ExtResource("2_a6kqu")
 0:0/0 = 0
@@ -92,43 +129,6 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_rnmy4")
 
-[sub_resource type="Animation" id="Animation_fbx3o"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/WorldFilter:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_bqoy1"]
-resource_name = "fade_in"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/WorldFilter:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_7nay6"]
-_data = {
-"RESET": SubResource("Animation_fbx3o"),
-"start_second_world": SubResource("Animation_bqoy1")
-}
-
 [node name="Level" type="Node2D" node_paths=PackedStringArray("orbs")]
 script = ExtResource("1_0bfpk")
 orbs = [NodePath("FirstWorld/Orb")]
@@ -143,6 +143,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0.976471, 0.490196)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_7nay6")
+}
 
 [node name="FirstWorld" type="Node2D" parent="."]
 
@@ -176,8 +182,3 @@ position = Vector2(104, 80)
 
 [node name="Rock4" parent="FirstWorld" instance=ExtResource("3_0xah0")]
 position = Vector2(88, 96)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_7nay6")
-}
