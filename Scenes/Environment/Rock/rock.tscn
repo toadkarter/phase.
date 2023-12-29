@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bg31smg0omldk"]
+[gd_scene load_steps=4 format=3 uid="uid://bg31smg0omldk"]
 
 [ext_resource type="Texture2D" uid="uid://cyotndjltvg4j" path="res://Assets/Art/Environment/rock.png" id="1_03x0y"]
+[ext_resource type="Script" path="res://Scenes/Environment/Rock/rock.gd" id="1_opymi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_op51s"]
 size = Vector2(16, 16)
 
-[node name="Rock" type="StaticBody2D"]
+[node name="Rock" type="StaticBody2D" groups=["Phaseable"]]
 collision_layer = 2
+script = ExtResource("1_opymi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_03x0y")

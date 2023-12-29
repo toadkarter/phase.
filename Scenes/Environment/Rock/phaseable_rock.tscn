@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://xm403ix1ma12"]
+
+[ext_resource type="Script" path="res://Scenes/Environment/Rock/phaseable.gd" id="1_nn4aq"]
+[ext_resource type="PackedScene" uid="uid://bg31smg0omldk" path="res://Scenes/Environment/Rock/rock.tscn" id="2_os0ns"]
+
+[node name="PhaseableRock" type="Node2D"]
+script = ExtResource("1_nn4aq")
+
+[node name="Rock" parent="." instance=ExtResource("2_os0ns")]

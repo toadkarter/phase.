@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cch3jkjn1gy2m"]
+
+[ext_resource type="Script" path="res://Scenes/Environment/Rock/phaseable.gd" id="1_e3nh6"]
+[ext_resource type="PackedScene" uid="uid://dt6u0rb8fw1ky" path="res://Scenes/Items/Orb/orb.tscn" id="2_cyqab"]
+
+[node name="PhaseableOrb" type="Node2D"]
+script = ExtResource("1_e3nh6")
+
+[node name="Orb" parent="." instance=ExtResource("2_cyqab")]
