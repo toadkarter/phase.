@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://s5pygmx65oy3"]
+
+[ext_resource type="Script" path="res://Scenes/Items/Switch/switch.gd" id="1_qkyt3"]
+[ext_resource type="Texture2D" uid="uid://bi126f64f607t" path="res://Assets/Art/Switch/button1.png" id="1_w3rgp"]
+[ext_resource type="Texture2D" uid="uid://cdquob6g1tupv" path="res://Assets/Art/Switch/button2.png" id="2_aq0l5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1itx"]
+size = Vector2(16, 16)
+
+[node name="Switch" type="Area2D" groups=["Phaseable"]]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_qkyt3")
+
+[node name="UpSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_w3rgp")
+
+[node name="DownSprite" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_aq0l5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_t1itx")

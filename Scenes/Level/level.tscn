@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dnk0pl6nua0mo"]
+[gd_scene load_steps=14 format=3 uid="uid://dnk0pl6nua0mo"]
 
 [ext_resource type="Script" path="res://Scenes/Level/level.gd" id="1_0bfpk"]
 [ext_resource type="PackedScene" uid="uid://bgx0u804veai4" path="res://Scenes/Player/player.tscn" id="1_gwcp2"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dt6u0rb8fw1ky" path="res://Scenes/Items/Orb/orb.tscn" id="4_imv7b"]
 [ext_resource type="PackedScene" uid="uid://6ai0vwsjxqm" path="res://Scenes/Items/Door/door.tscn" id="6_8grlb"]
 [ext_resource type="PackedScene" uid="uid://n57kh5x6frly" path="res://Scenes/Items/Crate/crate.tscn" id="7_t1rmx"]
+[ext_resource type="PackedScene" uid="uid://s5pygmx65oy3" path="res://Scenes/Items/Switch/switch.tscn" id="8_ywcpa"]
 
 [sub_resource type="Animation" id="Animation_fbx3o"]
 length = 0.001
@@ -161,8 +162,6 @@ libraries = {
 
 [node name="Player" parent="FirstWorld" instance=ExtResource("1_gwcp2")]
 position = Vector2(176, 144)
-speed = 100.0
-push_force = 100.0
 
 [node name="TileMap" type="TileMap" parent="FirstWorld"]
 z_index = -1
@@ -192,6 +191,10 @@ position = Vector2(216, 80)
 
 [node name="Crate" parent="FirstWorld" instance=ExtResource("7_t1rmx")]
 position = Vector2(112, 128)
+
+[node name="Switch" parent="FirstWorld" instance=ExtResource("8_ywcpa")]
+z_index = -1
+position = Vector2(160, 104)
 
 [node name="SecondWorld" type="Node2D" parent="."]
 position = Vector2(0, -256)
