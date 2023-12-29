@@ -8,22 +8,19 @@ class_name Player
 
 func _physics_process(delta: float):
 	_handle_input(delta)
-
-
 	move_and_slide()
-	
 	_handle_collisions()
 	
 	
 func _handle_input(delta: float) -> void:
-	var x_axis = Input.get_axis("left", "right")
-	var y_axis = Input.get_axis("up", "down")
+	var x_axis: float = Input.get_axis("left", "right")
+	var y_axis: float = Input.get_axis("up", "down")
 	
 	if x_axis == 0 and y_axis == 0:
 		_set_idle_animations()
 		return
 		
-	var input = Vector2(x_axis, y_axis).normalized()
+	var input: Vector2 = Vector2(x_axis, y_axis).normalized()
 	position += input * speed * delta
 	
 	_set_movement_animations(input)
@@ -53,10 +50,6 @@ func _set_idle_animations() -> void:
 func _handle_collisions() -> void:
 	for index in get_slide_collision_count():
 		var collision: KinematicCollision2D = get_slide_collision(index)
-		var body: Object = collision.get_collider()
-		var rigid_body: RigidBody2D = body as RigidBody2D
-		if body.is_in_group("Moveable") and rigid_body != null:
+		var rigid_body: RigidBody2D = collision.get_collider() as RigidBody2D
+		if rigid_body != null and rigid_body.is_in_group("Moveable"):
 			rigid_body.apply_central_impulse(-collision.get_normal() * push_force)
-		
-		
-		

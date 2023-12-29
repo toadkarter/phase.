@@ -161,6 +161,8 @@ libraries = {
 
 [node name="Player" parent="FirstWorld" instance=ExtResource("1_gwcp2")]
 position = Vector2(176, 144)
+speed = 100.0
+push_force = 100.0
 
 [node name="TileMap" type="TileMap" parent="FirstWorld"]
 z_index = -1
