@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dnk0pl6nua0mo"]
+[gd_scene load_steps=7 format=3 uid="uid://dnk0pl6nua0mo"]
 
 [ext_resource type="PackedScene" uid="uid://bgx0u804veai4" path="res://Scenes/Player/player.tscn" id="1_gwcp2"]
 [ext_resource type="Texture2D" uid="uid://dnm16ys4q17n8" path="res://Assets/Art/Tilesets/dungeon-tileset.png" id="2_a6kqu"]
 [ext_resource type="PackedScene" uid="uid://bg31smg0omldk" path="res://Scenes/Environment/Rock/rock.tscn" id="3_0xah0"]
+[ext_resource type="PackedScene" uid="uid://dt6u0rb8fw1ky" path="res://Scenes/Items/Orb/orb.tscn" id="4_imv7b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rnmy4"]
 texture = ExtResource("2_a6kqu")
@@ -92,8 +93,11 @@ sources/0 = SubResource("TileSetAtlasSource_rnmy4")
 
 [node name="Level" type="Node2D"]
 
+[node name="Orb" parent="." instance=ExtResource("4_imv7b")]
+position = Vector2(112, 168)
+
 [node name="Player" parent="." instance=ExtResource("1_gwcp2")]
-position = Vector2(225, 173)
+position = Vector2(176, 144)
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -1
@@ -103,19 +107,19 @@ layer_0/tile_data = PackedInt32Array(0, 131072, 0, 65536, 0, 1, 131072, 0, 1, 19
 metadata/_edit_lock_ = true
 
 [node name="Rock" parent="." instance=ExtResource("3_0xah0")]
-position = Vector2(136, 120)
+position = Vector2(104, 112)
 
 [node name="Rock2" parent="." instance=ExtResource("3_0xah0")]
-position = Vector2(152, 120)
+position = Vector2(120, 112)
 
 [node name="Rock3" parent="." instance=ExtResource("3_0xah0")]
-position = Vector2(168, 104)
+position = Vector2(136, 96)
 
 [node name="Rock5" parent="." instance=ExtResource("3_0xah0")]
-position = Vector2(152, 88)
+position = Vector2(120, 80)
 
 [node name="Rock6" parent="." instance=ExtResource("3_0xah0")]
-position = Vector2(136, 88)
+position = Vector2(104, 80)
 
 [node name="Rock4" parent="." instance=ExtResource("3_0xah0")]
-position = Vector2(120, 104)
+position = Vector2(88, 96)

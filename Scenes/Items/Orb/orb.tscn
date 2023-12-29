@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://dt6u0rb8fw1ky"]
+
+[ext_resource type="Script" path="res://Scenes/Items/Orb/orb.gd" id="1_4evdh"]
+[ext_resource type="Texture2D" uid="uid://dvdgrqvmdurpr" path="res://Assets/Art/Orb/orb-blue1.png" id="1_c1kjs"]
+[ext_resource type="Texture2D" uid="uid://bgxue7llgiv53" path="res://Assets/Art/Orb/orb-blue2.png" id="2_stcmc"]
+[ext_resource type="Texture2D" uid="uid://c4s8g5otkywc3" path="res://Assets/Art/Orb/orb-blue3.png" id="3_j3w28"]
+[ext_resource type="Texture2D" uid="uid://dj0vsne7h3dtb" path="res://Assets/Art/Orb/orb-blue4.png" id="4_teoe0"]
+[ext_resource type="Texture2D" uid="uid://b1g25f4ax646y" path="res://Assets/Art/Orb/orb-blue5.png" id="5_i8yp1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i0127"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_c1kjs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_stcmc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_j3w28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_teoe0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_i8yp1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tnxgg"]
+size = Vector2(16, 16)
+
+[node name="Orb" type="Area2D"]
+scale = Vector2(0.8, 0.8)
+collision_layer = 4
+script = ExtResource("1_4evdh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.3, 1.3)
+sprite_frames = SubResource("SpriteFrames_i0127")
+autoplay = "default"
+frame_progress = 0.298943
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tnxgg")
