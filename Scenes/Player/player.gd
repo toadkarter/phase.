@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 @export var speed: float = 100.0
+@export var push_force: float = 100.0
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 
@@ -21,6 +22,8 @@ func _physics_process(_delta: float):
 		_handle_horizontal_movement(horizontal_direction)
 
 	move_and_slide()
+	
+	_handle_collisions()
 	
 
 func _handle_vertical_movement(current_direction: float) -> void:
@@ -56,3 +59,13 @@ func _set_flip_orientation() -> void:
 		animated_sprite.flip_h = true
 	elif velocity.x < 0 and animated_sprite.flip_h:
 		animated_sprite.flip_h = false
+		
+		
+func _handle_collisions() -> void:
+	for index in get_slide_collision_count():
+		var collision: KinematicCollision2D = get_slide_collision(index)
+		var body: Object = collision.get_collider()
+		var rigid_body: RigidBody2D = body as RigidBody2D
+		if body.is_in_group("Moveable") and rigid_body != null:
+			rigid_body.apply_central_impulse(-collision.get_normal() * push_force)
+		

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://n57kh5x6frly"]
+
+[ext_resource type="Texture2D" uid="uid://dnm16ys4q17n8" path="res://Assets/Art/Tilesets/dungeon-tileset.png" id="1_t31x3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_la55v"]
+size = Vector2(16, 16)
+
+[node name="Crate" type="RigidBody2D" groups=["Moveable"]]
+collision_layer = 4
+collision_mask = 7
+gravity_scale = 0.0
+lock_rotation = true
+linear_damp = 50.0
+angular_damp = 50.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_t31x3")
+region_enabled = true
+region_rect = Rect2(48, 64, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_la55v")
