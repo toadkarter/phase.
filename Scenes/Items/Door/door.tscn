@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://6ai0vwsjxqm"]
+[gd_scene load_steps=6 format=3 uid="uid://6ai0vwsjxqm"]
 
 [ext_resource type="Texture2D" uid="uid://droba17yvwe8r" path="res://Assets/Art/Doors/dungeon-door-opened.png" id="1_dupa1"]
 [ext_resource type="Script" path="res://Scenes/Items/Door/door.gd" id="1_olsut"]
+[ext_resource type="Texture2D" uid="uid://bkdek23j5dmum" path="res://Assets/Art/Doors/door-red.png" id="3_fi1ym"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3rq0"]
+size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nehse"]
 size = Vector2(14, 15)
@@ -10,8 +14,19 @@ size = Vector2(14, 15)
 collision_layer = 4
 script = ExtResource("1_olsut")
 
-[node name="DoorOpened" type="Sprite2D" parent="."]
+[node name="OpenedSprite" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("1_dupa1")
+
+[node name="ClosedDoor" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 7
+
+[node name="ClosedSprite" type="Sprite2D" parent="ClosedDoor"]
+texture = ExtResource("3_fi1ym")
+
+[node name="ClosedDoorCollider" type="CollisionShape2D" parent="ClosedDoor"]
+shape = SubResource("RectangleShape2D_i3rq0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)

@@ -185,6 +185,7 @@ position = Vector2(112, 40)
 [node name="Door" parent="FirstWorld" instance=ExtResource("6_8grlb")]
 z_index = -1
 position = Vector2(136, 24)
+start_opened = false
 
 [node name="Orb2" parent="FirstWorld" instance=ExtResource("4_imv7b")]
 position = Vector2(216, 80)
