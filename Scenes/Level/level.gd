@@ -12,6 +12,7 @@ var first_world_objects: Array[Node2D]
 var second_world_objects: Array[Node2D]
 
 @onready var animation_player: AnimationPlayer = $CanvasLayer/AnimationPlayer
+@onready var world_fade_animation_length: float = animation_player.get_animation("start_second_world").length
 
 func _ready():	
 	_init_objects()
@@ -27,30 +28,12 @@ func _ready():
 func _on_changed_worlds() -> void:
 	if is_in_first_world:
 		animation_player.play("start_second_world")
-		for first_world_object in first_world_objects:
-			first_world_object.position.y -= LEVEL_DISPLACEMENT
-		for second_world_object in second_world_objects:
-			second_world_object.position.y += LEVEL_DISPLACEMENT
-		for orb in orbs:
-			if orb.is_in_first_world():
-				orb.position.y -= LEVEL_DISPLACEMENT
-			else:
-				orb.position.y += LEVEL_DISPLACEMENT
-		
-		is_in_first_world = false
+		await get_tree().create_timer(world_fade_animation_length).timeout
+		_setup_second_world()
 	else:
 		animation_player.play_backwards()
-		for first_world_object in first_world_objects:
-			first_world_object.position.y += LEVEL_DISPLACEMENT
-		for second_world_object in second_world_objects:
-			second_world_object.position.y -= LEVEL_DISPLACEMENT
-		for orb in orbs:
-			if orb.is_in_first_world():
-				orb.position.y += LEVEL_DISPLACEMENT
-			else:
-				orb.position.y -= LEVEL_DISPLACEMENT
-		
-		is_in_first_world = true
+		await get_tree().create_timer(world_fade_animation_length).timeout
+		_setup_first_world()
 		
 		
 func _init_objects() -> void:
@@ -62,4 +45,30 @@ func _init_objects() -> void:
 		if second_world_object.is_in_group("Phaseable"):
 			second_world_objects.append(second_world_object)	
 			
-
+			
+func _setup_first_world() -> void:
+	for first_world_object in first_world_objects:
+		first_world_object.position.y += LEVEL_DISPLACEMENT
+	for second_world_object in second_world_objects:
+		second_world_object.position.y -= LEVEL_DISPLACEMENT
+	for orb in orbs:
+		if orb.is_in_first_world():
+			orb.position.y += LEVEL_DISPLACEMENT
+		else:
+			orb.position.y -= LEVEL_DISPLACEMENT
+	
+	is_in_first_world = true
+			
+			
+func _setup_second_world() -> void:
+	for first_world_object in first_world_objects:
+		first_world_object.position.y -= LEVEL_DISPLACEMENT
+	for second_world_object in second_world_objects:
+		second_world_object.position.y += LEVEL_DISPLACEMENT
+	for orb in orbs:
+		if orb.is_in_first_world():
+			orb.position.y -= LEVEL_DISPLACEMENT
+		else:
+			orb.position.y += LEVEL_DISPLACEMENT
+	
+	is_in_first_world = false
