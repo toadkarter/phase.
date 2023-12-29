@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 
-func _physics_process(delta):
+func _physics_process(_delta: float):
 	var previous_horizontal: float = velocity.x
 	var previous_vertical: float = velocity.y
 	
@@ -40,8 +40,6 @@ func _handle_vertical_movement(current_direction: float) -> void:
 		
 		
 func _handle_horizontal_movement(current_direction: float) -> void:
-	var previous_velocity: float = velocity.x
-	
 	if current_direction:
 		velocity.x = current_direction * speed
 		if velocity.x != 0:
