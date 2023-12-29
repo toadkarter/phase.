@@ -42,6 +42,7 @@ func _init_switch() -> void:
 	switch.connect("on", _handle_switch_on)
 	switch.connect("off", _handle_switch_off)
 	
+	
 func _handle_switch_on() -> void:
 	if !is_open:
 		_open_door()

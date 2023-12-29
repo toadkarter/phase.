@@ -191,7 +191,7 @@ switch = NodePath("../Switch")
 position = Vector2(216, 80)
 
 [node name="Crate" parent="FirstWorld" instance=ExtResource("7_t1rmx")]
-position = Vector2(112, 128)
+position = Vector2(120, 128)
 
 [node name="Switch" parent="FirstWorld" instance=ExtResource("8_ywcpa")]
 z_index = -1

@@ -4,6 +4,8 @@ class_name Switch
 signal on
 signal off
 
+@export var _is_in_first_world = true
+
 @onready var up_sprite: Sprite2D = $UpSprite
 @onready var down_sprite: Sprite2D = $DownSprite
 
@@ -32,3 +34,7 @@ func _set_switch_off() -> void:
 	up_sprite.visible = true
 	down_sprite.visible = false
 	off.emit()
+	
+	
+func is_in_first_world() -> bool:
+	return _is_in_first_world
