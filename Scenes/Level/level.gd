@@ -4,6 +4,7 @@ class_name Level
 const LEVEL_DISPLACEMENT: float = 256.0
 
 @export var orbs: Array[Orb]
+@export var door: Door
 @export var first_world: Node2D
 @export var second_world: Node2D
 
@@ -16,13 +17,9 @@ var second_world_objects: Array[Node2D]
 
 func _ready():	
 	_init_objects()
-	
-	if orbs.is_empty():
-		print("Error: You forgot to add orbs to the level")
-		
-	for orb in orbs:
-		if orb != null:
-			orb.connect("changed_worlds", _on_changed_worlds)
+	_init_orbs()
+	door.connect("entered", _on_door_entered)
+
 	
 	
 func _on_changed_worlds() -> void:
@@ -72,3 +69,16 @@ func _setup_second_world() -> void:
 			orb.position.y += LEVEL_DISPLACEMENT
 	
 	is_in_first_world = false
+
+
+func _init_orbs() -> void:
+	if orbs.is_empty():
+		print("Error: You forgot to add orbs to the level")
+		
+	for orb in orbs:
+		if orb != null:
+			orb.connect("changed_worlds", _on_changed_worlds)
+	
+
+func _on_door_entered() -> void:
+	print("We have finished the level")

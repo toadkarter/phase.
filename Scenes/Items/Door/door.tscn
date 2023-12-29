@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://6ai0vwsjxqm"]
+
+[ext_resource type="Texture2D" uid="uid://droba17yvwe8r" path="res://Assets/Art/Doors/dungeon-door-opened.png" id="1_dupa1"]
+[ext_resource type="Script" path="res://Scenes/Items/Door/door.gd" id="1_olsut"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nehse"]
+size = Vector2(14, 15)
+
+[node name="Door" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_olsut")
+
+[node name="DoorOpened" type="Sprite2D" parent="."]
+texture = ExtResource("1_dupa1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_nehse")
