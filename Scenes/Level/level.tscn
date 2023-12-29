@@ -182,10 +182,10 @@ position = Vector2(128, 56)
 [node name="Rock6" parent="FirstWorld" instance=ExtResource("3_0xah0")]
 position = Vector2(112, 40)
 
-[node name="Door" parent="FirstWorld" instance=ExtResource("6_8grlb")]
+[node name="Door" parent="FirstWorld" node_paths=PackedStringArray("switch") instance=ExtResource("6_8grlb")]
 z_index = -1
 position = Vector2(136, 24)
-start_opened = false
+switch = NodePath("../Switch")
 
 [node name="Orb2" parent="FirstWorld" instance=ExtResource("4_imv7b")]
 position = Vector2(216, 80)

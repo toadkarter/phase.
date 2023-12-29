@@ -14,11 +14,11 @@ func _ready():
 	connect("body_exited", _on_body_exited)
 	
 	
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(_body: Node2D) -> void:
 	_set_switch_on()
 	
 
-func _on_body_exited(body: Node2D) -> void:
+func _on_body_exited(_body: Node2D) -> void:
 	_set_switch_off()
 	
 	
