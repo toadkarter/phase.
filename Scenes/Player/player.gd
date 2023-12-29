@@ -6,59 +6,48 @@ class_name Player
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 
-func _physics_process(_delta: float):
-	var previous_horizontal: float = velocity.x
-	var previous_vertical: float = velocity.y
-	
-	var horizontal_direction = Input.get_axis("left", "right")
-	var vertical_direction = Input.get_axis("up", "down")
-	
-	if previous_vertical != 0.0:
-		_handle_vertical_movement(vertical_direction)
-	elif previous_horizontal != 0.0:
-		_handle_horizontal_movement(horizontal_direction)
-	else:
-		_handle_vertical_movement(vertical_direction)
-		_handle_horizontal_movement(horizontal_direction)
+func _physics_process(delta: float):
+	_handle_input(delta)
+
 
 	move_and_slide()
 	
 	_handle_collisions()
 	
-
-func _handle_vertical_movement(current_direction: float) -> void:
-	var previous_velocity: float = velocity.y
 	
-	if current_direction:
-		velocity.y = current_direction * speed
-		if velocity.y < 0:
-			animated_sprite.play("up")
-		elif velocity.y > 0:
-			animated_sprite.play("down")
-	else:
-		velocity.y = 0
-		if previous_velocity < 0:
-			animated_sprite.play("up")
-		elif previous_velocity > 0:
-			animated_sprite.play("down_idle")
+func _handle_input(delta: float) -> void:
+	var x_axis = Input.get_axis("left", "right")
+	var y_axis = Input.get_axis("up", "down")
+	
+	if x_axis == 0 and y_axis == 0:
+		_set_idle_animations()
+		return
+		
+	var input = Vector2(x_axis, y_axis).normalized()
+	position += input * speed * delta
+	
+	_set_movement_animations(input)
 		
 		
-func _handle_horizontal_movement(current_direction: float) -> void:
-	if current_direction:
-		velocity.x = current_direction * speed
-		if velocity.x != 0:
-			animated_sprite.play("side")
-			_set_flip_orientation()
-	else:
-		velocity.x = 0 
+func _set_movement_animations(input: Vector2) -> void:
+	if input.x != 0:
+		animated_sprite.play("side")
+		if input.x < 0:
+			animated_sprite.flip_h = false
+		elif input.x > 0:
+			animated_sprite.flip_h = true
+	elif input.y > 0:
+		animated_sprite.play("down")
+	elif input.y < 0:
+		animated_sprite.play("up")
+
+
+func _set_idle_animations() -> void:
+	animated_sprite.stop()
+	if animated_sprite.animation == "down":
+		animated_sprite.play("down_idle")
+	elif animated_sprite.animation == "side":
 		animated_sprite.play("side_idle")
-		
-		
-func _set_flip_orientation() -> void:
-	if velocity.x > 0 and !animated_sprite.flip_h:
-		animated_sprite.flip_h = true
-	elif velocity.x < 0 and animated_sprite.flip_h:
-		animated_sprite.flip_h = false
 		
 		
 func _handle_collisions() -> void:
@@ -68,4 +57,6 @@ func _handle_collisions() -> void:
 		var rigid_body: RigidBody2D = body as RigidBody2D
 		if body.is_in_group("Moveable") and rigid_body != null:
 			rigid_body.apply_central_impulse(-collision.get_normal() * push_force)
+		
+		
 		
