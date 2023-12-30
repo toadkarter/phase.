@@ -15,14 +15,14 @@ var first_world_objects: Array[Node2D]
 var second_world_objects: Array[Node2D]
 
 @onready var animation_player: AnimationPlayer = $CanvasLayer/AnimationPlayer
+@onready var world_fade: AnimationPlayer = $CanvasLayer/WorldFade
 @onready var world_fade_animation_length: float = animation_player.get_animation("start_second_world").length
 
 func _ready():	
 	_init_objects()
 	_init_orbs()
 	door.connect("entered", _on_door_entered)
-
-	
+	world_fade.play("fade_in")
 	
 func _on_changed_worlds() -> void:
 	if is_in_first_world:
@@ -87,4 +87,8 @@ func _init_orbs() -> void:
 	
 
 func _on_door_entered() -> void:
+	var length = world_fade.get_animation("fade_in").length
+	world_fade.play_backwards("fade_in")
+	animation_player.play_backwards()
+	await get_tree().create_timer(length).timeout
 	finished.emit()

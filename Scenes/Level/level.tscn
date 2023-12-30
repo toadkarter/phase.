@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dnk0pl6nua0mo"]
+[gd_scene load_steps=21 format=3 uid="uid://dnk0pl6nua0mo"]
 
 [ext_resource type="Script" path="res://Scenes/Level/level.gd" id="1_0bfpk"]
 [ext_resource type="PackedScene" uid="uid://bgx0u804veai4" path="res://Scenes/Player/player.tscn" id="1_gwcp2"]
@@ -27,6 +27,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_bqoy1"]
 resource_name = "fade_in"
@@ -48,6 +60,43 @@ tracks/0/keys = {
 _data = {
 "RESET": SubResource("Animation_fbx3o"),
 "start_second_world": SubResource("Animation_bqoy1")
+}
+
+[sub_resource type="Animation" id="Animation_que23"]
+resource_name = "fade_in"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ma4fr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vhldl"]
+_data = {
+"RESET": SubResource("Animation_ma4fr"),
+"fade_in": SubResource("Animation_que23")
 }
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rnmy4"]
@@ -140,6 +189,7 @@ physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_rnmy4")
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("orbs", "door", "first_world", "second_world")]
+modulate = Color(0, 0, 0, 1)
 script = ExtResource("1_0bfpk")
 orbs = [NodePath("SecondWorld/Orb"), NodePath("FirstWorld/Orb2")]
 door = NodePath("FirstWorld/Door")
@@ -162,6 +212,12 @@ metadata/_edit_lock_ = true
 root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_7nay6")
+}
+
+[node name="WorldFade" type="AnimationPlayer" parent="CanvasLayer"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_vhldl")
 }
 
 [node name="FirstWorld" type="Node2D" parent="."]
