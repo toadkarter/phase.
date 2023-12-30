@@ -15,7 +15,7 @@ func _ready():
 	connect("body_exited", _on_body_exited)
 	
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	for body in bodies:
 		if body is RigidBody2D:
 			body.apply_central_impulse(current_direction * object_force)
