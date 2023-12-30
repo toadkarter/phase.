@@ -2,12 +2,12 @@ extends Area2D
 class_name Water
 
 @export var box_drop_threshold: float = 7.0
+@export var _is_in_first_world = true
 
 var current_crate: Crate = null
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var player_collider: CollisionShape2D = $StaticBody2D/PlayerCollider
-
 
 func _ready():
 	connect("body_entered", _on_body_entered)
@@ -31,3 +31,7 @@ func _on_body_entered(body: Node2D):
 func _on_body_exited(body: Node2D):
 	if body is Crate and current_crate:
 		current_crate = null
+
+	
+func is_in_first_world() -> bool:
+	return _is_in_first_world

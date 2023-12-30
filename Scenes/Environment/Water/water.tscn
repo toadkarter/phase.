@@ -41,7 +41,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a03wn"]
 size = Vector2(16, 16)
 
-[node name="Water" type="Area2D"]
+[node name="Water" type="Area2D" groups=["Phaseable"]]
 collision_layer = 8
 collision_mask = 7
 script = ExtResource("1_wbo73")
