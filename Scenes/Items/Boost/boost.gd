@@ -3,6 +3,7 @@ class_name Boost
 
 @export var object_force: float = 100.0
 @export var player_force: float = 2.0
+@export var _is_in_first_world = true
 
 var bodies: Array[Node2D]
 
@@ -20,7 +21,6 @@ func _physics_process(delta: float) -> void:
 			body.apply_central_impulse(current_direction * object_force)
 		elif body is Player:
 			body.position += current_direction * player_force
-			
 
 	
 func _on_body_entered(body: Node2D) -> void:
@@ -32,3 +32,7 @@ func _on_body_exited(body: Node2D) -> void:
 	var body_index = bodies.find(body)
 	if body_index != -1:
 		bodies.remove_at(body_index)
+		
+
+func is_in_first_world() -> bool:
+	return _is_in_first_world
