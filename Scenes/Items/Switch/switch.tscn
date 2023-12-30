@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cdquob6g1tupv" path="res://Assets/Art/Switch/button2.png" id="2_aq0l5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t1itx"]
-size = Vector2(16, 16)
+size = Vector2(14, 14)
 
 [node name="Switch" type="Area2D" groups=["Phaseable"]]
 collision_layer = 4

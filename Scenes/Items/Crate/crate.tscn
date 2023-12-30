@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dnm16ys4q17n8" path="res://Assets/Art/Tilesets/dungeon-tileset.png" id="1_t31x3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_la55v"]
-size = Vector2(16, 16)
+size = Vector2(14, 14)
 
 [node name="Crate" type="RigidBody2D" groups=["Moveable"]]
 collision_layer = 4

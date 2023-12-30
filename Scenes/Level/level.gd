@@ -21,6 +21,9 @@ var second_world_objects: Array[Node2D]
 @onready var world_fade_animation_length: float = animation_player.get_animation("start_second_world").length
 
 func _ready():	
+	second_world.modulate.a = 1.0
+	second_world.position.y -= LEVEL_DISPLACEMENT
+	
 	_init_objects()
 	_init_orbs()
 	_init_player()
