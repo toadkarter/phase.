@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dnk0pl6nua0mo"]
+[gd_scene load_steps=16 format=3 uid="uid://dnk0pl6nua0mo"]
 
 [ext_resource type="Script" path="res://Scenes/Level/level.gd" id="1_0bfpk"]
 [ext_resource type="PackedScene" uid="uid://bgx0u804veai4" path="res://Scenes/Player/player.tscn" id="1_gwcp2"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://n57kh5x6frly" path="res://Scenes/Items/Crate/crate.tscn" id="7_t1rmx"]
 [ext_resource type="PackedScene" uid="uid://s5pygmx65oy3" path="res://Scenes/Items/Switch/switch.tscn" id="8_ywcpa"]
 [ext_resource type="PackedScene" uid="uid://ct2518kiapo0r" path="res://Scenes/Environment/Water/water.tscn" id="9_y3yte"]
+[ext_resource type="PackedScene" uid="uid://c4i7qaom5236r" path="res://Scenes/Environment/Block/block.tscn" id="10_84gk5"]
 
 [sub_resource type="Animation" id="Animation_fbx3o"]
 length = 0.001
@@ -203,6 +204,24 @@ position = Vector2(160, 104)
 [node name="Water" parent="FirstWorld" instance=ExtResource("9_y3yte")]
 z_index = -1
 position = Vector2(96, 104)
+
+[node name="Block" parent="FirstWorld" instance=ExtResource("10_84gk5")]
+position = Vector2(120, 168)
+
+[node name="Block2" parent="FirstWorld" instance=ExtResource("10_84gk5")]
+position = Vector2(136, 168)
+
+[node name="Block3" parent="FirstWorld" instance=ExtResource("10_84gk5")]
+position = Vector2(152, 168)
+
+[node name="Block4" parent="FirstWorld" instance=ExtResource("10_84gk5")]
+position = Vector2(104, 168)
+
+[node name="Block5" parent="FirstWorld" instance=ExtResource("10_84gk5")]
+position = Vector2(104, 184)
+
+[node name="Block6" parent="FirstWorld" instance=ExtResource("10_84gk5")]
+position = Vector2(152, 184)
 
 [node name="SecondWorld" type="Node2D" parent="."]
 position = Vector2(0, -256)
