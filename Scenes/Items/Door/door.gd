@@ -4,6 +4,7 @@ class_name Door
 signal entered
 
 @export var switch: Switch
+@export var key: Key
 
 var is_open: bool = true
 
@@ -37,17 +38,20 @@ func _close_door() -> void:
 	
 	
 func _init_switch() -> void:
-	if switch == null:
-		return
-	switch.connect("on", _handle_switch_on)
-	switch.connect("off", _handle_switch_off)
+	if switch != null:
+		switch.connect("on", _handle_door_open)
+		switch.connect("off", _handle_door_closed)
+		
+	if key != null:
+		key.connect("collected", _handle_door_open)
+		
 	
 	
-func _handle_switch_on() -> void:
+func _handle_door_open() -> void:
 	if !is_open:
 		_open_door()
 	
 
-func _handle_switch_off() -> void:
+func _handle_door_closed() -> void:
 	if is_open:
 		_close_door()
