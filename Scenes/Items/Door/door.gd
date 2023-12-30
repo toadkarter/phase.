@@ -26,14 +26,14 @@ func _on_body_entered(body: Node2D) -> void:
 func _open_door() -> void:
 	opened_sprite.visible = true
 	closed_sprite.visible = false
-	closed_door_collider.disabled = true
+	call_deferred("_set_closed_door_collider", false)
 	is_open = true
 	
 	
 func _close_door() -> void:
 	opened_sprite.visible = false
 	closed_sprite.visible = true
-	closed_door_collider.disabled = false
+	call_deferred("_set_closed_door_collider", true)
 	is_open = false
 	
 	
@@ -55,3 +55,7 @@ func _handle_door_open() -> void:
 func _handle_door_closed() -> void:
 	if is_open:
 		_close_door()
+		
+		
+func _set_closed_door_collider(on: bool) -> void:
+	closed_door_collider.disabled = !on
