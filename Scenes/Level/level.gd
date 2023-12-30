@@ -34,6 +34,10 @@ func _on_changed_worlds() -> void:
 		
 		
 func _init_objects() -> void:
+	for object in get_children():
+		if object.is_in_group("Phaseable"):
+			print("Error: Object " + object.name + " is phaseable but not affixed to a world node.")
+	
 	for first_world_object in first_world.get_children():
 		if first_world_object.is_in_group("Phaseable"):
 			first_world_objects.append(first_world_object)

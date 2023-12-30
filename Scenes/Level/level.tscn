@@ -233,6 +233,14 @@ position = Vector2(208, 120)
 position = Vector2(72, 136)
 rotation = -1.5708
 
+[node name="Boost2" parent="FirstWorld" instance=ExtResource("12_6cw17")]
+position = Vector2(88, 136)
+rotation = -1.5708
+
+[node name="Boost3" parent="FirstWorld" instance=ExtResource("12_6cw17")]
+position = Vector2(56, 136)
+rotation = -1.5708
+
 [node name="SecondWorld" type="Node2D" parent="."]
 position = Vector2(0, -256)
 
