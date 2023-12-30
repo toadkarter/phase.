@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dnk0pl6nua0mo"]
+[gd_scene load_steps=18 format=3 uid="uid://dnk0pl6nua0mo"]
 
 [ext_resource type="Script" path="res://Scenes/Level/level.gd" id="1_0bfpk"]
 [ext_resource type="PackedScene" uid="uid://bgx0u804veai4" path="res://Scenes/Player/player.tscn" id="1_gwcp2"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ct2518kiapo0r" path="res://Scenes/Environment/Water/water.tscn" id="9_y3yte"]
 [ext_resource type="PackedScene" uid="uid://c4i7qaom5236r" path="res://Scenes/Environment/Block/block.tscn" id="10_84gk5"]
 [ext_resource type="PackedScene" uid="uid://blo5g4nrdiffp" path="res://Scenes/Items/Key/key.tscn" id="11_eyh5q"]
+[ext_resource type="PackedScene" uid="uid://r2eidnb3pdgy" path="res://Scenes/Items/Boost/boost.tscn" id="12_6cw17"]
 
 [sub_resource type="Animation" id="Animation_fbx3o"]
 length = 0.001
@@ -259,3 +260,7 @@ _is_in_first_world = false
 
 [node name="Key" parent="." instance=ExtResource("11_eyh5q")]
 position = Vector2(208, 120)
+
+[node name="Boost" parent="." instance=ExtResource("12_6cw17")]
+position = Vector2(72, 136)
+rotation = -1.5708

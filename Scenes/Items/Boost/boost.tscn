@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://r2eidnb3pdgy"]
+
+[ext_resource type="Texture2D" uid="uid://btjfltoucgr0t" path="res://Assets/Art/UI/hud-tileset.png" id="1_8ax18"]
+[ext_resource type="Script" path="res://Scenes/Items/Boost/boost.gd" id="1_r84do"]
+[ext_resource type="Texture2D" uid="uid://bf844nce6pywf" path="res://Assets/Art/UI/menu-cursor.png" id="2_0kgcf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_giut1"]
+size = Vector2(48, 48)
+
+[node name="Boost" type="Area2D"]
+z_index = -1
+scale = Vector2(0.329999, 0.329999)
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("1_r84do")
+
+[node name="FrameSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_8ax18")
+
+[node name="ArrowSprite" type="Sprite2D" parent="."]
+rotation = -1.5708
+scale = Vector2(2.97282, 2.38832)
+texture = ExtResource("2_0kgcf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_giut1")
