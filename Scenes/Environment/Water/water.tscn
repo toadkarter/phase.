@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://ct2518kiapo0r"]
+
+[ext_resource type="Texture2D" uid="uid://dnm16ys4q17n8" path="res://Assets/Art/Tilesets/dungeon-tileset.png" id="1_6b1dm"]
+[ext_resource type="Script" path="res://Scenes/Environment/Water/water.gd" id="1_wbo73"]
+[ext_resource type="Texture2D" uid="uid://bl48td00hterb" path="res://Assets/Art/BoxWater/box-water1.png" id="3_culcq"]
+[ext_resource type="Texture2D" uid="uid://cp3xeah0ym82x" path="res://Assets/Art/BoxWater/box-water2.png" id="4_bh8g1"]
+[ext_resource type="Texture2D" uid="uid://8ultase1rbpn" path="res://Assets/Art/BoxWater/box-water3.png" id="5_uqbiy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7sro4"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fyd4"]
+atlas = ExtResource("1_6b1dm")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dsmcg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fyd4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_culcq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bh8g1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uqbiy")
+}],
+"loop": false,
+"name": &"drop_block",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a03wn"]
+size = Vector2(16, 16)
+
+[node name="Water" type="Area2D"]
+collision_layer = 8
+collision_mask = 7
+script = ExtResource("1_wbo73")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7sro4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dsmcg")
+autoplay = "default"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 8
+
+[node name="PlayerCollider" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_a03wn")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dnk0pl6nua0mo"]
+[gd_scene load_steps=15 format=3 uid="uid://dnk0pl6nua0mo"]
 
 [ext_resource type="Script" path="res://Scenes/Level/level.gd" id="1_0bfpk"]
 [ext_resource type="PackedScene" uid="uid://bgx0u804veai4" path="res://Scenes/Player/player.tscn" id="1_gwcp2"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://6ai0vwsjxqm" path="res://Scenes/Items/Door/door.tscn" id="6_8grlb"]
 [ext_resource type="PackedScene" uid="uid://n57kh5x6frly" path="res://Scenes/Items/Crate/crate.tscn" id="7_t1rmx"]
 [ext_resource type="PackedScene" uid="uid://s5pygmx65oy3" path="res://Scenes/Items/Switch/switch.tscn" id="8_ywcpa"]
+[ext_resource type="PackedScene" uid="uid://ct2518kiapo0r" path="res://Scenes/Environment/Water/water.tscn" id="9_y3yte"]
 
 [sub_resource type="Animation" id="Animation_fbx3o"]
 length = 0.001
@@ -111,9 +112,11 @@ texture = ExtResource("2_a6kqu")
 1:3/0 = 0
 1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:3/0/physics_layer_0/angular_velocity = 0.0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:3/0 = 0
 2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:3/0/physics_layer_0/angular_velocity = 0.0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:3/0 = 0
 3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:3/0/physics_layer_0/angular_velocity = 0.0
@@ -196,6 +199,10 @@ position = Vector2(120, 128)
 [node name="Switch" parent="FirstWorld" instance=ExtResource("8_ywcpa")]
 z_index = -1
 position = Vector2(160, 104)
+
+[node name="Water" parent="FirstWorld" instance=ExtResource("9_y3yte")]
+z_index = -1
+position = Vector2(96, 104)
 
 [node name="SecondWorld" type="Node2D" parent="."]
 position = Vector2(0, -256)
