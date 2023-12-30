@@ -6,6 +6,10 @@ class_name Player
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 
+func _ready() -> void:
+	animated_sprite.play("up")
+
+
 func _physics_process(delta: float):
 	_handle_input(delta)
 	move_and_slide()

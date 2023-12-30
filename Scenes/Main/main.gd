@@ -15,6 +15,16 @@ func _ready():
 		_start_level(debug_level_index)
 	else:
 		_start_level(current_level_index)
+		
+		
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("quit") and OS.get_name() != "Web":
+		get_tree().quit()
+		
+	if Input.is_action_just_pressed("reset"):
+		remove_child(current_level)
+		current_level.queue_free()
+		_start_level(current_level_index)
 	
 	
 func _start_level(index: int) -> void:
