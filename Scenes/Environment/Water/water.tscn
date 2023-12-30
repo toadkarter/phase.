@@ -53,8 +53,9 @@ shape = SubResource("RectangleShape2D_7sro4")
 sprite_frames = SubResource("SpriteFrames_dsmcg")
 autoplay = "default"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="WaterBlocker" type="StaticBody2D" parent="."]
+z_index = -1
 collision_layer = 8
 
-[node name="PlayerCollider" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="PlayerCollider" type="CollisionShape2D" parent="WaterBlocker"]
 shape = SubResource("RectangleShape2D_a03wn")
