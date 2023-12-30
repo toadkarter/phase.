@@ -1,6 +1,8 @@
 extends Node2D
 class_name Level
 
+signal finished
+
 const LEVEL_DISPLACEMENT: float = 256.0
 
 @export var orbs: Array[Orb]
@@ -85,4 +87,4 @@ func _init_orbs() -> void:
 	
 
 func _on_door_entered() -> void:
-	print("We have finished the level")
+	finished.emit()
