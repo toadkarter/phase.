@@ -1,15 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://cohou0jl01fwh"]
+[gd_scene load_steps=13 format=3 uid="uid://6c5njjylhpl5"]
 
 [ext_resource type="Script" path="res://Scenes/Level/level.gd" id="1_uqkj8"]
-[ext_resource type="PackedScene" uid="uid://bgx0u804veai4" path="res://Scenes/Player/player.tscn" id="2_bp7pc"]
-[ext_resource type="PackedScene" uid="uid://bg31smg0omldk" path="res://Scenes/Environment/Rock/rock.tscn" id="3_0xah0"]
 [ext_resource type="Texture2D" uid="uid://dnm16ys4q17n8" path="res://Assets/Art/Tilesets/dungeon-tileset.png" id="3_l6yfy"]
 [ext_resource type="PackedScene" uid="uid://6ai0vwsjxqm" path="res://Scenes/Items/Door/door.tscn" id="4_y2ss2"]
 [ext_resource type="PackedScene" uid="uid://dt6u0rb8fw1ky" path="res://Scenes/Items/Orb/orb.tscn" id="5_3de1w"]
-[ext_resource type="PackedScene" uid="uid://n57kh5x6frly" path="res://Scenes/Items/Crate/crate.tscn" id="7_t1rmx"]
-[ext_resource type="PackedScene" uid="uid://s5pygmx65oy3" path="res://Scenes/Items/Switch/switch.tscn" id="8_ywcpa"]
-[ext_resource type="PackedScene" uid="uid://c4i7qaom5236r" path="res://Scenes/Environment/Block/block.tscn" id="10_84gk5"]
-[ext_resource type="PackedScene" uid="uid://r2eidnb3pdgy" path="res://Scenes/Items/Boost/boost.tscn" id="12_6cw17"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rnmy4"]
 texture = ExtResource("3_l6yfy")
@@ -186,15 +180,9 @@ _data = {
 "fade_in": SubResource("Animation_que23")
 }
 
-[node name="Level" type="Node2D" node_paths=PackedStringArray("orbs", "door", "first_world", "second_world", "player_spawn")]
+[node name="Level" type="Node2D"]
 modulate = Color(0, 0, 0, 1)
 script = ExtResource("1_uqkj8")
-orbs = [NodePath("SecondWorld/Orb2"), NodePath("FirstWorld/Orb1")]
-player_scene = ExtResource("2_bp7pc")
-door = NodePath("FirstWorld/Door")
-first_world = NodePath("FirstWorld")
-second_world = NodePath("SecondWorld")
-player_spawn = NodePath("PlayerSpawn")
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -1
@@ -229,50 +217,15 @@ libraries = {
 
 [node name="FirstWorld" type="Node2D" parent="."]
 
-[node name="Door" parent="FirstWorld" node_paths=PackedStringArray("switch") instance=ExtResource("4_y2ss2")]
+[node name="Door" parent="FirstWorld" instance=ExtResource("4_y2ss2")]
 z_index = -1
 position = Vector2(136, 24)
-switch = NodePath("../Switch")
 
 [node name="Orb1" parent="FirstWorld" instance=ExtResource("5_3de1w")]
-position = Vector2(48, 184)
-
-[node name="Boost2" parent="FirstWorld" instance=ExtResource("12_6cw17")]
-position = Vector2(120, 168)
-rotation = 1.57079
-
-[node name="Boost3" parent="FirstWorld" instance=ExtResource("12_6cw17")]
-position = Vector2(152, 168)
-rotation = 3.14159
-
-[node name="Boost4" parent="FirstWorld" instance=ExtResource("12_6cw17")]
-position = Vector2(136, 168)
-rotation = 1.57079
-
-[node name="Boost7" parent="FirstWorld" instance=ExtResource("12_6cw17")]
-position = Vector2(184, 152)
-
-[node name="Boost8" parent="FirstWorld" instance=ExtResource("12_6cw17")]
-position = Vector2(184, 136)
-
-[node name="Boost9" parent="FirstWorld" instance=ExtResource("12_6cw17")]
-position = Vector2(184, 120)
-
-[node name="Boost10" parent="FirstWorld" instance=ExtResource("12_6cw17")]
-position = Vector2(184, 168)
-
-[node name="Rock" parent="FirstWorld" instance=ExtResource("3_0xah0")]
-position = Vector2(88, 168)
-
-[node name="Rock2" parent="FirstWorld" instance=ExtResource("3_0xah0")]
-position = Vector2(184, 104)
-
-[node name="Switch" parent="FirstWorld" instance=ExtResource("8_ywcpa")]
-z_index = -1
-position = Vector2(184, 88)
+position = Vector2(168, 208)
 
 [node name="SecondWorld" type="Node2D" parent="."]
-modulate = Color(1, 1, 1, 0.392157)
+modulate = Color(1, 1, 1, 0.513726)
 
 [node name="TileMap" type="TileMap" parent="SecondWorld"]
 z_index = -1
@@ -282,113 +235,8 @@ layer_0/tile_data = PackedInt32Array(0, 131072, 0, 65536, 0, 1, 131072, 0, 1, 19
 metadata/_edit_lock_ = true
 
 [node name="Orb2" parent="SecondWorld" instance=ExtResource("5_3de1w")]
-position = Vector2(72, 184)
+position = Vector2(120, 208)
 _is_in_first_world = false
-
-[node name="Rock2" parent="SecondWorld" instance=ExtResource("3_0xah0")]
-position = Vector2(120, 168)
-
-[node name="Boost" parent="SecondWorld" instance=ExtResource("12_6cw17")]
-position = Vector2(104, 168)
-rotation = 1.57079
-
-[node name="Boost2" parent="SecondWorld" instance=ExtResource("12_6cw17")]
-position = Vector2(152, 168)
-rotation = 1.57079
-
-[node name="Boost3" parent="SecondWorld" instance=ExtResource("12_6cw17")]
-position = Vector2(168, 168)
-rotation = 1.57079
-
-[node name="Boost11" parent="SecondWorld" instance=ExtResource("12_6cw17")]
-position = Vector2(184, 120)
-
-[node name="Boost12" parent="SecondWorld" instance=ExtResource("12_6cw17")]
-position = Vector2(184, 104)
 
 [node name="PlayerSpawn" type="Node2D" parent="."]
 position = Vector2(136, 232)
-
-[node name="Crate" parent="." instance=ExtResource("7_t1rmx")]
-position = Vector2(64, 168)
-
-[node name="Block" parent="." instance=ExtResource("10_84gk5")]
-position = Vector2(104, 184)
-
-[node name="Block2" parent="." instance=ExtResource("10_84gk5")]
-position = Vector2(104, 152)
-
-[node name="Block26" parent="." instance=ExtResource("10_84gk5")]
-position = Vector2(88, 152)
-
-[node name="Block27" parent="." instance=ExtResource("10_84gk5")]
-position = Vector2(88, 184)
-
-[node name="Block3" parent="." instance=ExtResource("10_84gk5")]
-position = Vector2(120, 152)
-
-[node name="Block4" parent="." instance=ExtResource("10_84gk5")]
-position = Vector2(136, 152)
-
-[node name="Block5" parent="." instance=ExtResource("10_84gk5")]
-position = Vector2(120, 184)
-
-[node name="Block6" parent="." instance=ExtResource("10_84gk5")]
-position = Vector2(136, 200)
-
-[node name="Block7" parent="." instance=ExtResource("10_84gk5")]
-position = Vector2(152, 200)
-
-[node name="Block8" parent="." instance=ExtResource("10_84gk5")]
-position = Vector2(168, 200)
-
-[node name="Block9" parent="." instance=ExtResource("10_84gk5")]
-position = Vector2(152, 152)
-
-[node name="Block10" parent="." instance=ExtResource("10_84gk5")]
-position = Vector2(168, 152)
-
-[node name="Block11" parent="." instance=ExtResource("10_84gk5")]
-position = Vector2(184, 200)
-
-[node name="Block12" parent="." instance=ExtResource("10_84gk5")]
-position = Vector2(200, 184)
-
-[node name="Block13" parent="." instance=ExtResource("10_84gk5")]
-position = Vector2(200, 168)
-
-[node name="Block14" parent="." instance=ExtResource("10_84gk5")]
-position = Vector2(200, 152)
-
-[node name="Block15" parent="." instance=ExtResource("10_84gk5")]
-position = Vector2(200, 136)
-
-[node name="Block16" parent="." instance=ExtResource("10_84gk5")]
-position = Vector2(168, 136)
-
-[node name="Block17" parent="." instance=ExtResource("10_84gk5")]
-position = Vector2(168, 120)
-
-[node name="Block18" parent="." instance=ExtResource("10_84gk5")]
-position = Vector2(200, 120)
-
-[node name="Block19" parent="." instance=ExtResource("10_84gk5")]
-position = Vector2(200, 104)
-
-[node name="Block21" parent="." instance=ExtResource("10_84gk5")]
-position = Vector2(200, 88)
-
-[node name="Block22" parent="." instance=ExtResource("10_84gk5")]
-position = Vector2(168, 88)
-
-[node name="Block23" parent="." instance=ExtResource("10_84gk5")]
-position = Vector2(168, 72)
-
-[node name="Block24" parent="." instance=ExtResource("10_84gk5")]
-position = Vector2(184, 72)
-
-[node name="Block25" parent="." instance=ExtResource("10_84gk5")]
-position = Vector2(200, 72)
-
-[node name="Block20" parent="." instance=ExtResource("10_84gk5")]
-position = Vector2(168, 104)

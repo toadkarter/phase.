@@ -277,7 +277,7 @@ position = Vector2(136, 104)
 position = Vector2(136, 160)
 
 [node name="SecondWorld" type="Node2D" parent="."]
-position = Vector2(0, -256)
+modulate = Color(1, 1, 1, 0.509804)
 
 [node name="TileMap" type="TileMap" parent="SecondWorld"]
 z_index = -1

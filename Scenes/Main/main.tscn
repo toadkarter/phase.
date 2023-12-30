@@ -1,8 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://co1d8mwegtexv"]
+[gd_scene load_steps=4 format=3 uid="uid://co1d8mwegtexv"]
 
 [ext_resource type="Script" path="res://Scenes/Main/main.gd" id="1_mg7jt"]
-[ext_resource type="PackedScene" uid="uid://cohou0jl01fwh" path="res://Scenes/Level/level.tscn" id="2_yqn4g"]
+[ext_resource type="PackedScene" uid="uid://dnk0pl6nua0mo" path="res://Scenes/Levels/moat.tscn" id="2_gpmit"]
+[ext_resource type="PackedScene" uid="uid://cohou0jl01fwh" path="res://Scenes/Levels/conveyor.tscn" id="2_yqn4g"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_mg7jt")
-level_scenes = Array[PackedScene]([ExtResource("2_yqn4g")])
+level_scenes = Array[PackedScene]([ExtResource("2_gpmit"), ExtResource("2_yqn4g")])
