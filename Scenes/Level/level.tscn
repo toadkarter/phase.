@@ -192,7 +192,7 @@ position = Vector2(112, 40)
 z_index = -1
 position = Vector2(136, 24)
 switch = NodePath("../Switch")
-key = NodePath("../../Key")
+key = NodePath("../Key")
 
 [node name="Orb2" parent="FirstWorld" instance=ExtResource("4_imv7b")]
 position = Vector2(216, 80)
@@ -226,6 +226,13 @@ position = Vector2(104, 184)
 [node name="Block6" parent="FirstWorld" instance=ExtResource("10_84gk5")]
 position = Vector2(152, 184)
 
+[node name="Key" parent="FirstWorld" instance=ExtResource("11_eyh5q")]
+position = Vector2(208, 120)
+
+[node name="Boost" parent="FirstWorld" instance=ExtResource("12_6cw17")]
+position = Vector2(72, 136)
+rotation = -1.5708
+
 [node name="SecondWorld" type="Node2D" parent="."]
 position = Vector2(0, -256)
 
@@ -257,10 +264,3 @@ position = Vector2(64, 88)
 [node name="Orb" parent="SecondWorld" instance=ExtResource("4_imv7b")]
 position = Vector2(192, 120)
 _is_in_first_world = false
-
-[node name="Key" parent="." instance=ExtResource("11_eyh5q")]
-position = Vector2(208, 120)
-
-[node name="Boost" parent="." instance=ExtResource("12_6cw17")]
-position = Vector2(72, 136)
-rotation = -1.5708
