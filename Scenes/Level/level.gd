@@ -6,9 +6,11 @@ signal finished
 const LEVEL_DISPLACEMENT: float = 256.0
 
 @export var orbs: Array[Orb]
+@export var player_scene: PackedScene
 @export var door: Door
 @export var first_world: Node2D
 @export var second_world: Node2D
+@export var player_spawn: Node2D
 
 var is_in_first_world: bool = true
 var first_world_objects: Array[Node2D]
@@ -21,6 +23,8 @@ var second_world_objects: Array[Node2D]
 func _ready():	
 	_init_objects()
 	_init_orbs()
+	_init_player()
+	
 	door.connect("entered", _on_door_entered)
 	world_fade.play("fade_in")
 	
@@ -84,6 +88,12 @@ func _init_orbs() -> void:
 	for orb in orbs:
 		if orb != null:
 			orb.connect("changed_worlds", _on_changed_worlds)
+	
+	
+func _init_player() -> void:
+	var player = player_scene.instantiate()
+	add_child(player)
+	player.position = player_spawn.position
 	
 
 func _on_door_entered() -> void:

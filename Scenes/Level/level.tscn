@@ -188,13 +188,15 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_rnmy4")
 
-[node name="Level" type="Node2D" node_paths=PackedStringArray("orbs", "door", "first_world", "second_world")]
+[node name="Level" type="Node2D" node_paths=PackedStringArray("orbs", "door", "first_world", "second_world", "player_spawn")]
 modulate = Color(0, 0, 0, 1)
 script = ExtResource("1_0bfpk")
 orbs = [NodePath("SecondWorld/Orb"), NodePath("FirstWorld/Orb2")]
+player_scene = ExtResource("1_gwcp2")
 door = NodePath("FirstWorld/Door")
 first_world = NodePath("FirstWorld")
 second_world = NodePath("SecondWorld")
+player_spawn = NodePath("PlayerSpawn")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -328,3 +330,6 @@ position = Vector2(64, 88)
 [node name="Orb" parent="SecondWorld" instance=ExtResource("4_imv7b")]
 position = Vector2(192, 120)
 _is_in_first_world = false
+
+[node name="PlayerSpawn" type="Node2D" parent="."]
+position = Vector2(176, 144)
