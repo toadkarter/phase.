@@ -1,9 +1,12 @@
 extends Area2D
 class_name Boost
 
-@export var force = 100.0
+@export var object_force: float = 100.0
+@export var player_force: float = 2.0
 
 var bodies: Array[Node2D]
+
+@onready var current_direction = Vector2.UP.rotated(rotation)
 
 
 func _ready():
@@ -12,11 +15,12 @@ func _ready():
 	
 	
 func _physics_process(delta: float) -> void:
-	# rotation 0 = up
-	# rotation
 	for body in bodies:
 		if body is RigidBody2D:
-			body.apply_central_impulse(Vector2.UP.rotated(rotation) * force)
+			body.apply_central_impulse(current_direction * object_force)
+		elif body is Player:
+			body.position += current_direction * player_force
+			
 
 	
 func _on_body_entered(body: Node2D) -> void:
