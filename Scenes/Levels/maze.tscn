@@ -261,7 +261,7 @@ position = Vector2(136, 40)
 position = Vector2(136, 88)
 
 [node name="Key" parent="FirstWorld" groups=["Phaseable"] instance=ExtResource("9_jlnla")]
-position = Vector2(136, 56)
+position = Vector2(136, 72)
 
 [node name="SecondWorld" type="Node2D" parent="."]
 modulate = Color(1, 1, 1, 0.513726)
