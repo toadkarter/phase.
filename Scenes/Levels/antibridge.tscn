@@ -461,254 +461,317 @@ _is_in_first_world = false
 [node name="Water" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(120, 40)
+_is_in_first_world = false
 
 [node name="Water2" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(120, 56)
+_is_in_first_world = false
 
 [node name="Water3" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(120, 72)
+_is_in_first_world = false
 
 [node name="Water4" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(120, 88)
+_is_in_first_world = false
 
 [node name="Water5" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(120, 104)
+_is_in_first_world = false
 
 [node name="Water6" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(120, 120)
+_is_in_first_world = false
 
 [node name="Water7" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(120, 136)
+_is_in_first_world = false
 
 [node name="Water8" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(120, 152)
+_is_in_first_world = false
 
 [node name="Water9" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(120, 168)
+_is_in_first_world = false
 
 [node name="Water11" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(152, 40)
+_is_in_first_world = false
 
 [node name="Water12" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(152, 56)
+_is_in_first_world = false
 
 [node name="Water13" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(152, 72)
+_is_in_first_world = false
 
 [node name="Water14" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(152, 88)
+_is_in_first_world = false
 
 [node name="Water15" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(152, 104)
+_is_in_first_world = false
 
 [node name="Water16" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(152, 120)
+_is_in_first_world = false
 
 [node name="Water17" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(152, 136)
+_is_in_first_world = false
 
 [node name="Water18" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(152, 152)
+_is_in_first_world = false
 
 [node name="Water19" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(152, 168)
+_is_in_first_world = false
 
 [node name="Water10" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(32, 40)
+_is_in_first_world = false
 
 [node name="Water20" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(32, 56)
+_is_in_first_world = false
 
 [node name="Water21" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(32, 72)
+_is_in_first_world = false
 
 [node name="Water22" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(32, 88)
+_is_in_first_world = false
 
 [node name="Water23" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(32, 104)
+_is_in_first_world = false
 
 [node name="Water24" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(32, 120)
+_is_in_first_world = false
 
 [node name="Water25" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(32, 136)
+_is_in_first_world = false
 
 [node name="Water26" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(32, 152)
+_is_in_first_world = false
 
 [node name="Water27" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(32, 168)
+_is_in_first_world = false
 
 [node name="Water28" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(64, 40)
+_is_in_first_world = false
 
 [node name="Water29" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(64, 56)
+_is_in_first_world = false
 
 [node name="Water30" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(64, 72)
+_is_in_first_world = false
 
 [node name="Water31" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(64, 88)
+_is_in_first_world = false
 
 [node name="Water32" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(64, 104)
+_is_in_first_world = false
 
 [node name="Water33" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(64, 120)
+_is_in_first_world = false
 
 [node name="Water34" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(64, 136)
+_is_in_first_world = false
 
 [node name="Water35" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(64, 152)
+_is_in_first_world = false
 
 [node name="Water36" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(64, 168)
+_is_in_first_world = false
 
 [node name="Water37" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(48, 40)
+_is_in_first_world = false
 
 [node name="Water38" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(48, 56)
+_is_in_first_world = false
 
 [node name="Water39" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(48, 72)
+_is_in_first_world = false
 
 [node name="Water40" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(48, 88)
+_is_in_first_world = false
 
 [node name="Water41" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(48, 104)
+_is_in_first_world = false
 
 [node name="Water42" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(48, 120)
+_is_in_first_world = false
 
 [node name="Water43" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(48, 136)
+_is_in_first_world = false
 
 [node name="Water44" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(48, 152)
+_is_in_first_world = false
 
 [node name="Water45" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(48, 168)
+_is_in_first_world = false
 
 [node name="Water55" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(232, 40)
+_is_in_first_world = false
 
 [node name="Water56" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(232, 56)
+_is_in_first_world = false
 
 [node name="Water57" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(232, 72)
+_is_in_first_world = false
 
 [node name="Water58" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(232, 88)
+_is_in_first_world = false
 
 [node name="Water59" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(232, 104)
+_is_in_first_world = false
 
 [node name="Water60" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(232, 120)
+_is_in_first_world = false
 
 [node name="Water61" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(232, 136)
+_is_in_first_world = false
 
 [node name="Water62" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(232, 152)
+_is_in_first_world = false
 
 [node name="Water63" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(232, 168)
+_is_in_first_world = false
 
 [node name="Water64" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(216, 40)
+_is_in_first_world = false
 
 [node name="Water65" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(216, 56)
+_is_in_first_world = false
 
 [node name="Water66" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(216, 72)
+_is_in_first_world = false
 
 [node name="Water67" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(216, 88)
+_is_in_first_world = false
 
 [node name="Water68" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(216, 104)
+_is_in_first_world = false
 
 [node name="Water69" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(216, 120)
+_is_in_first_world = false
 
 [node name="Water70" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(216, 136)
+_is_in_first_world = false
 
 [node name="Water71" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(216, 152)
+_is_in_first_world = false
 
 [node name="Water72" parent="SecondWorld" instance=ExtResource("6_57dxx")]
 z_index = -1
 position = Vector2(216, 168)
+_is_in_first_world = false
 
 [node name="Rock21" parent="SecondWorld" instance=ExtResource("6_n8ic8")]
 position = Vector2(136, 40)

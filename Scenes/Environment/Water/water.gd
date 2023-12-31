@@ -13,7 +13,7 @@ var current_position_offset: Vector2 = Vector2.ZERO
 @onready var player_collider: CollisionShape2D = $WaterBlocker/PlayerCollider
 
 func _ready():
-	if _is_in_first_world:
+	if !_is_in_first_world:
 		current_position_offset.y += LEVEL_DISPLACEMENT
 	connect("body_entered", _on_body_entered)
 	connect("body_exited", _on_body_exited)
