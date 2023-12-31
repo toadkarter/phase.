@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://de0m45w22068p"]
+[gd_scene load_steps=18 format=3 uid="uid://de0m45w22068p"]
 
 [ext_resource type="Script" path="res://Scenes/Level/level.gd" id="1_n6wck"]
 [ext_resource type="PackedScene" uid="uid://bgx0u804veai4" path="res://Scenes/Player/player.tscn" id="2_pncga"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bg31smg0omldk" path="res://Scenes/Environment/Rock/rock.tscn" id="6_llfim"]
 [ext_resource type="PackedScene" uid="uid://c4i7qaom5236r" path="res://Scenes/Environment/Block/block.tscn" id="7_qira2"]
 [ext_resource type="PackedScene" uid="uid://r2eidnb3pdgy" path="res://Scenes/Items/Boost/boost.tscn" id="8_k2f6u"]
+[ext_resource type="PackedScene" uid="uid://blo5g4nrdiffp" path="res://Scenes/Items/Key/key.tscn" id="9_jlnla"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rnmy4"]
 texture = ExtResource("2_y46m1")
@@ -227,9 +228,10 @@ libraries = {
 
 [node name="FirstWorld" type="Node2D" parent="."]
 
-[node name="Door" parent="FirstWorld" instance=ExtResource("3_fa7ts")]
+[node name="Door" parent="FirstWorld" node_paths=PackedStringArray("key") instance=ExtResource("3_fa7ts")]
 z_index = -1
 position = Vector2(136, 24)
+key = NodePath("../Key")
 
 [node name="Orb1" parent="FirstWorld" instance=ExtResource("4_55uiv")]
 position = Vector2(136, 200)
@@ -257,6 +259,9 @@ position = Vector2(136, 40)
 
 [node name="Boost2" parent="FirstWorld" instance=ExtResource("8_k2f6u")]
 position = Vector2(136, 88)
+
+[node name="Key" parent="FirstWorld" groups=["Phaseable"] instance=ExtResource("9_jlnla")]
+position = Vector2(136, 56)
 
 [node name="SecondWorld" type="Node2D" parent="."]
 modulate = Color(1, 1, 1, 0.513726)

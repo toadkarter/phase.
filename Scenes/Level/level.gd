@@ -58,8 +58,12 @@ func _init_objects() -> void:
 			
 func _setup_first_world() -> void:
 	for first_world_object in first_world_objects:
+		if first_world_object == null:
+			continue
 		first_world_object.position.y += LEVEL_DISPLACEMENT
 	for second_world_object in second_world_objects:
+		if second_world_object == null:
+			continue
 		second_world_object.position.y -= LEVEL_DISPLACEMENT
 	for orb in orbs:
 		if orb == null:
@@ -74,8 +78,12 @@ func _setup_first_world() -> void:
 			
 func _setup_second_world() -> void:
 	for first_world_object in first_world_objects:
+		if first_world_object == null:
+			continue
 		first_world_object.position.y -= LEVEL_DISPLACEMENT
 	for second_world_object in second_world_objects:
+		if second_world_object == null:
+			continue
 		second_world_object.position.y += LEVEL_DISPLACEMENT
 	for orb in orbs:
 		if orb == null:

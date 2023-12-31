@@ -41,10 +41,11 @@ func _init_switch() -> void:
 	if switch != null:
 		switch.connect("on", _handle_door_open)
 		switch.connect("off", _handle_door_closed)
+		_close_door()
 		
 	if key != null:
 		key.connect("collected", _handle_door_open)
-		
+		_close_door()
 	
 	
 func _handle_door_open() -> void:
