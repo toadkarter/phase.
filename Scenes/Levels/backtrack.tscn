@@ -301,6 +301,9 @@ position = Vector2(56, 88)
 [node name="Block6" parent="." instance=ExtResource("7_dyidc")]
 position = Vector2(40, 88)
 
+[node name="Block7" parent="." instance=ExtResource("7_dyidc")]
+position = Vector2(24, 88)
+
 [node name="Block8" parent="." instance=ExtResource("7_dyidc")]
 position = Vector2(232, 88)
 
@@ -354,3 +357,6 @@ position = Vector2(56, 168)
 
 [node name="Block25" parent="." instance=ExtResource("7_dyidc")]
 position = Vector2(40, 168)
+
+[node name="Block26" parent="." instance=ExtResource("7_dyidc")]
+position = Vector2(24, 168)
