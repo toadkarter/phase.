@@ -1,0 +1,91 @@
+[gd_scene load_steps=9 format=3 uid="uid://dm83n38e772pd"]
+
+[ext_resource type="Material" uid="uid://cxdn0w8ikp53i" path="res://Assets/Shaders/black_and_white.tres" id="1_2ayol"]
+[ext_resource type="Script" path="res://Scenes/Hud/level_hud.gd" id="1_gacb0"]
+
+[sub_resource type="Animation" id="Animation_fbx3o"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_bqoy1"]
+resource_name = "fade_in"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HUD/WorldFilter:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7nay6"]
+_data = {
+"RESET": SubResource("Animation_fbx3o"),
+"start_second_world": SubResource("Animation_bqoy1")
+}
+
+[sub_resource type="Animation" id="Animation_ma4fr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_que23"]
+resource_name = "fade_in"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vhldl"]
+_data = {
+"RESET": SubResource("Animation_ma4fr"),
+"fade_in": SubResource("Animation_que23")
+}
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_gacb0")
+
+[node name="WorldFilter" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+material = ExtResource("1_2ayol")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_7nay6")
+}
+
+[node name="WorldFade" type="AnimationPlayer" parent="."]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_vhldl")
+}

@@ -12,12 +12,12 @@ config_version=5
 
 config/name="Best of Both Worlds"
 run/main_scene="res://Scenes/Main/main.tscn"
-config/features=PackedStringArray("4.2", "GL Compatibility")
+config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=640
+window/size/viewport_width=680
 window/size/viewport_height=640
 window/size/resizable=false
 window/stretch/scale=2.5

@@ -16,46 +16,49 @@ var is_in_first_world: bool = true
 var first_world_objects: Array[Node2D]
 var second_world_objects: Array[Node2D]
 
-@onready var animation_player: AnimationPlayer = $CanvasLayer/AnimationPlayer
-@onready var world_fade: AnimationPlayer = $CanvasLayer/WorldFade
-@onready var world_fade_animation_length: float = animation_player.get_animation("start_second_world").length
+@onready var hud: Hud = $HUD
+# @onready var animation_player: AnimationPlayer = $CanvasLayer/AnimationPlayer
+# @onready var world_fade: AnimationPlayer = $CanvasLayer/WorldFade
 
-func _ready():	
+
+func _ready():
 	second_world.modulate.a = 1.0
 	second_world.position.y -= LEVEL_DISPLACEMENT
-	
+
 	_init_objects()
 	_init_orbs()
 	_init_player()
-	
+
 	door.connect("entered", _on_door_entered)
-	world_fade.play("fade_in")
-	
+	hud.fade_in()
+
+
 func _on_changed_worlds() -> void:
+	var length: float = hud.get_world_fade_animation_length()
 	if is_in_first_world:
-		animation_player.play("start_second_world")
-		await get_tree().create_timer(world_fade_animation_length).timeout
+		hud.start_second_world()
+		await get_tree().create_timer(length).timeout
 		_setup_second_world()
 	else:
-		animation_player.play_backwards()
-		await get_tree().create_timer(world_fade_animation_length).timeout
+		hud.start_first_world()
+		await get_tree().create_timer(length).timeout
 		_setup_first_world()
-		
-		
+
+
 func _init_objects() -> void:
 	for object in get_children():
 		if object.is_in_group("Phaseable"):
 			print("Error: Object " + object.name + " is phaseable but not affixed to a world node.")
-	
+
 	for first_world_object in first_world.get_children():
 		if first_world_object.is_in_group("Phaseable"):
 			first_world_objects.append(first_world_object)
-			
+
 	for second_world_object in second_world.get_children():
 		if second_world_object.is_in_group("Phaseable"):
-			second_world_objects.append(second_world_object)	
-			
-			
+			second_world_objects.append(second_world_object)
+
+
 func _setup_first_world() -> void:
 	for first_world_object in first_world_objects:
 		if first_world_object == null:
@@ -72,10 +75,10 @@ func _setup_first_world() -> void:
 			orb.position.y += LEVEL_DISPLACEMENT
 		else:
 			orb.position.y -= LEVEL_DISPLACEMENT
-	
+
 	is_in_first_world = true
-			
-			
+
+
 func _setup_second_world() -> void:
 	for first_world_object in first_world_objects:
 		if first_world_object == null:
@@ -112,8 +115,8 @@ func _init_player() -> void:
 	
 
 func _on_door_entered() -> void:
-	var length = world_fade.get_animation("fade_in").length
-	world_fade.play_backwards("fade_in")
-	animation_player.play_backwards()
+	var length = hud.get_level_start_animation_length()
+	hud.fade_out()
+	hud.start_first_world()
 	await get_tree().create_timer(length).timeout
 	finished.emit()
