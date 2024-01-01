@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://co1d8mwegtexv"]
+[gd_scene load_steps=12 format=3 uid="uid://co1d8mwegtexv"]
 
 [ext_resource type="Script" path="res://Scenes/Main/main.gd" id="1_mg7jt"]
+[ext_resource type="PackedScene" uid="uid://d1okwysixuyxa" path="res://Scenes/Levels/flood.tscn" id="2_285v6"]
 [ext_resource type="PackedScene" uid="uid://m8h2jvb7r5ud" path="res://Scenes/Levels/antibridge.tscn" id="2_d4tby"]
 [ext_resource type="PackedScene" uid="uid://dnk0pl6nua0mo" path="res://Scenes/Levels/moat.tscn" id="2_gpmit"]
 [ext_resource type="PackedScene" uid="uid://0n7t2wenhuv3" path="res://Scenes/Levels/the_key.tscn" id="2_kcv4e"]
@@ -13,4 +14,4 @@
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_mg7jt")
-level_scenes = Array[PackedScene]([ExtResource("2_rqdoi"), ExtResource("2_gpmit"), ExtResource("2_x80m0"), ExtResource("3_g0che"), ExtResource("2_kcv4e"), ExtResource("2_p27l3"), ExtResource("2_x54vr"), ExtResource("2_d4tby"), ExtResource("2_yqn4g")])
+level_scenes = Array[PackedScene]([ExtResource("2_285v6"), ExtResource("2_rqdoi"), ExtResource("2_gpmit"), ExtResource("2_x80m0"), ExtResource("3_g0che"), ExtResource("2_kcv4e"), ExtResource("2_p27l3"), ExtResource("2_x54vr"), ExtResource("2_d4tby"), ExtResource("2_yqn4g")])

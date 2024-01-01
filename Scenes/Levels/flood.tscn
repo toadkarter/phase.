@@ -1,0 +1,408 @@
+[gd_scene load_steps=18 format=3 uid="uid://d1okwysixuyxa"]
+
+[ext_resource type="Script" path="res://Scenes/Level/level.gd" id="1_03e6l"]
+[ext_resource type="Texture2D" uid="uid://dnm16ys4q17n8" path="res://Assets/Art/Tilesets/dungeon-tileset.png" id="2_bxrsy"]
+[ext_resource type="PackedScene" uid="uid://bgx0u804veai4" path="res://Scenes/Player/player.tscn" id="2_r8u4r"]
+[ext_resource type="PackedScene" uid="uid://6ai0vwsjxqm" path="res://Scenes/Items/Door/door.tscn" id="3_3eaqd"]
+[ext_resource type="PackedScene" uid="uid://dt6u0rb8fw1ky" path="res://Scenes/Items/Orb/orb.tscn" id="4_8llnb"]
+[ext_resource type="PackedScene" uid="uid://ct2518kiapo0r" path="res://Scenes/Environment/Water/water.tscn" id="6_kbaqx"]
+[ext_resource type="PackedScene" uid="uid://n57kh5x6frly" path="res://Scenes/Items/Crate/crate.tscn" id="7_0bd1p"]
+[ext_resource type="PackedScene" uid="uid://bg31smg0omldk" path="res://Scenes/Environment/Rock/rock.tscn" id="8_sebqk"]
+[ext_resource type="PackedScene" uid="uid://c4i7qaom5236r" path="res://Scenes/Environment/Block/block.tscn" id="10_sw34t"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rnmy4"]
+texture = ExtResource("2_bxrsy")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:0/0 = 0
+5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:0/0/physics_layer_0/angular_velocity = 0.0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:1/0/physics_layer_0/angular_velocity = 0.0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:1/0 = 0
+4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:1/0/physics_layer_0/angular_velocity = 0.0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:1/0 = 0
+5:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:1/0/physics_layer_0/angular_velocity = 0.0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+3:2/0 = 0
+3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:2/0/physics_layer_0/angular_velocity = 0.0
+1:3/0 = 0
+1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:3/0/physics_layer_0/angular_velocity = 0.0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:3/0/physics_layer_0/angular_velocity = 0.0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:3/0/physics_layer_0/angular_velocity = 0.0
+1:4/0 = 0
+1:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:4/0/physics_layer_0/angular_velocity = 0.0
+2:4/0 = 0
+2:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:4/0/physics_layer_0/angular_velocity = 0.0
+3:4/0 = 0
+3:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:4/0/physics_layer_0/angular_velocity = 0.0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_gssj2"]
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 3
+sources/0 = SubResource("TileSetAtlasSource_rnmy4")
+
+[sub_resource type="Animation" id="Animation_fbx3o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/WorldFilter:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bqoy1"]
+resource_name = "fade_in"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/WorldFilter:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7nay6"]
+_data = {
+"RESET": SubResource("Animation_fbx3o"),
+"start_second_world": SubResource("Animation_bqoy1")
+}
+
+[sub_resource type="Animation" id="Animation_ma4fr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_que23"]
+resource_name = "fade_in"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vhldl"]
+_data = {
+"RESET": SubResource("Animation_ma4fr"),
+"fade_in": SubResource("Animation_que23")
+}
+
+[node name="Level" type="Node2D" node_paths=PackedStringArray("orbs", "door", "first_world", "second_world", "player_spawn")]
+modulate = Color(0, 0, 0, 1)
+script = ExtResource("1_03e6l")
+orbs = [NodePath("FirstWorld/Orb1"), NodePath("SecondWorld/Orb2")]
+player_scene = ExtResource("2_r8u4r")
+door = NodePath("FirstWorld/Door")
+first_world = NodePath("FirstWorld")
+second_world = NodePath("SecondWorld")
+player_spawn = NodePath("PlayerSpawn")
+
+[node name="TileMap" type="TileMap" parent="."]
+z_index = -1
+tile_set = SubResource("TileSet_gssj2")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 131072, 0, 65536, 0, 1, 131072, 0, 1, 196608, 0, 1, 262144, 0, 1, 327680, 0, 1, 393216, 0, 1, 1, 65536, 0, 2, 327680, 0, 3, 327680, 0, 4, 327680, 0, 5, 327680, 0, 6, 327680, 0, 10, 327680, 0, 65537, 65536, 1, 131073, 65536, 2, 196609, 65536, 2, 262145, 65536, 2, 327681, 65536, 2, 393217, 65536, 2, 65538, 262144, 1, 65539, 327680, 1, 65540, 327680, 1, 65541, 327680, 1, 65542, 327680, 1, 65546, 327680, 1, 131074, 131072, 2, 131075, 131072, 2, 131076, 131072, 2, 131077, 131072, 2, 131078, 131072, 2, 131079, 131072, 2, 131080, 131072, 2, 131081, 131072, 2, 131082, 131072, 2, 196618, 131072, 2, 196617, 131072, 2, 196616, 131072, 2, 196615, 131072, 2, 196614, 131072, 2, 196613, 131072, 2, 196612, 131072, 2, 196611, 131072, 2, 196610, 131072, 2, 262146, 131072, 2, 262147, 131072, 2, 262148, 131072, 2, 262149, 131072, 2, 262150, 131072, 2, 262151, 131072, 2, 262152, 131072, 2, 262153, 131072, 2, 262154, 131072, 2, 327690, 131072, 2, 327689, 131072, 2, 327688, 131072, 2, 327687, 131072, 2, 327686, 131072, 2, 327685, 131072, 2, 327684, 131072, 2, 327683, 131072, 2, 327682, 131072, 2, 393219, 131072, 2, 393220, 131072, 2, 393221, 131072, 2, 393222, 131072, 2, 393223, 131072, 2, 393224, 131072, 2, 393225, 131072, 2, 393226, 131072, 2, 393218, 131072, 2, 458752, 0, 1, 524288, 0, 1, 589824, 0, 1, 655360, 0, 1, 720896, 0, 1, 786432, 0, 1, 851968, 0, 1, 917504, 0, 1, 458753, 65536, 2, 524289, 65536, 2, 589825, 65536, 2, 655361, 65536, 2, 720897, 65536, 2, 786433, 65536, 2, 851969, 65536, 2, 917505, 65536, 2, 458754, 131072, 2, 524290, 131072, 2, 589826, 131072, 2, 655362, 131072, 2, 720898, 131072, 2, 786434, 131072, 2, 851970, 131072, 2, 917506, 131072, 2, 458755, 131072, 2, 524291, 131072, 2, 589827, 131072, 2, 655363, 131072, 2, 720899, 131072, 2, 786435, 131072, 2, 851971, 131072, 2, 917507, 131072, 2, 458756, 131072, 2, 524292, 131072, 2, 589828, 131072, 2, 655364, 131072, 2, 720900, 131072, 2, 786436, 131072, 2, 851972, 131072, 2, 917508, 131072, 2, 458757, 131072, 2, 524293, 131072, 2, 589829, 131072, 2, 655365, 131072, 2, 720901, 131072, 2, 786437, 131072, 2, 851973, 131072, 2, 917509, 131072, 2, 458758, 131072, 2, 524294, 131072, 2, 589830, 131072, 2, 655366, 131072, 2, 720902, 131072, 2, 786438, 131072, 2, 851974, 131072, 2, 917510, 131072, 2, 458759, 131072, 2, 524295, 131072, 2, 589831, 131072, 2, 655367, 131072, 2, 720903, 131072, 2, 786439, 131072, 2, 851975, 131072, 2, 917511, 131072, 2, 458760, 131072, 2, 524296, 131072, 2, 589832, 131072, 2, 655368, 131072, 2, 720904, 131072, 2, 786440, 131072, 2, 851976, 131072, 2, 917512, 131072, 2, 458761, 131072, 2, 524297, 131072, 2, 589833, 131072, 2, 655369, 131072, 2, 720905, 131072, 2, 786441, 131072, 2, 851977, 131072, 2, 917513, 131072, 2, 458762, 131072, 2, 524298, 131072, 2, 589834, 131072, 2, 655370, 131072, 2, 720906, 131072, 2, 786442, 131072, 2, 851978, 131072, 2, 917514, 131072, 2, 131083, 131072, 2, 196619, 131072, 2, 262155, 131072, 2, 327691, 131072, 2, 393227, 131072, 2, 458763, 131072, 2, 524299, 131072, 2, 589835, 131072, 2, 655371, 131072, 2, 720907, 131072, 2, 786443, 131072, 2, 851979, 131072, 2, 917515, 131072, 2, 131084, 131072, 2, 196620, 131072, 2, 262156, 131072, 2, 327692, 131072, 2, 393228, 131072, 2, 458764, 131072, 2, 524300, 131072, 2, 589836, 131072, 2, 655372, 131072, 2, 720908, 131072, 2, 786444, 131072, 2, 851980, 131072, 2, 917516, 131072, 2, 131085, 131072, 2, 196621, 131072, 2, 262157, 131072, 2, 327693, 131072, 2, 393229, 131072, 2, 458765, 131072, 2, 524301, 131072, 2, 589837, 131072, 2, 655373, 131072, 2, 720909, 131072, 2, 786445, 131072, 2, 851981, 131072, 2, 917517, 131072, 2, 11, 327680, 0, 12, 327680, 0, 13, 327680, 0, 65547, 327680, 1, 65548, 327680, 1, 65549, 327680, 1, 131086, 131072, 2, 196622, 131072, 2, 262158, 131072, 2, 327694, 131072, 2, 393230, 131072, 2, 458766, 131072, 2, 524302, 131072, 2, 589838, 131072, 2, 655374, 131072, 2, 720910, 131072, 2, 786446, 131072, 2, 851982, 131072, 2, 917518, 131072, 2, 65550, 327680, 1, 14, 327680, 0, 131087, 0, 268435457, 196623, 0, 268435457, 262159, 0, 268435457, 327695, 0, 268435457, 393231, 0, 268435457, 458767, 0, 268435457, 524303, 0, 268435457, 589839, 0, 268435457, 655375, 0, 268435457, 720911, 0, 268435457, 786447, 0, 268435457, 851983, 0, 268435457, 917519, 0, 268435457, 983054, 0, 1610612737, 983053, 0, 1610612737, 983052, 0, 1610612737, 983051, 0, 1610612737, 983050, 0, 1610612737, 983049, 0, 1610612737, 983048, 0, 1610612737, 983047, 0, 1610612737, 983046, 0, 1610612737, 983045, 0, 1610612737, 983044, 0, 1610612737, 983043, 0, 1610612737, 983042, 0, 1610612737, 983041, 0, 1610612737, 65551, 0, 268435457, 15, 131072, 0, 983055, 131072, 0, 983040, 131072, 0, 65543, 131072, 1, 9, 196608, 4, 65545, 131072, 1, 7, 196608, 4, 8, 196608, 4)
+metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="WorldFilter" type="ColorRect" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0.976471, 0.490196)
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_7nay6")
+}
+
+[node name="WorldFade" type="AnimationPlayer" parent="CanvasLayer"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_vhldl")
+}
+
+[node name="FirstWorld" type="Node2D" parent="."]
+
+[node name="Door" parent="FirstWorld" instance=ExtResource("3_3eaqd")]
+z_index = -1
+position = Vector2(136, 24)
+
+[node name="Orb1" parent="FirstWorld" instance=ExtResource("4_8llnb")]
+position = Vector2(160, 184)
+
+[node name="Rock" parent="FirstWorld" instance=ExtResource("8_sebqk")]
+position = Vector2(136, 40)
+
+[node name="SecondWorld" type="Node2D" parent="."]
+modulate = Color(1, 1, 1, 0.513726)
+
+[node name="TileMap" type="TileMap" parent="SecondWorld"]
+z_index = -1
+tile_set = SubResource("TileSet_gssj2")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 131072, 0, 65536, 0, 1, 131072, 0, 1, 196608, 0, 1, 262144, 0, 1, 327680, 0, 1, 393216, 0, 1, 1, 65536, 0, 2, 327680, 0, 3, 327680, 0, 4, 327680, 0, 5, 327680, 0, 6, 327680, 0, 7, 327680, 0, 8, 327680, 0, 9, 327680, 0, 10, 327680, 0, 65537, 65536, 1, 131073, 65536, 2, 196609, 65536, 2, 262145, 65536, 2, 327681, 65536, 2, 393217, 65536, 2, 65538, 262144, 1, 65539, 327680, 1, 65540, 327680, 1, 65541, 327680, 1, 65542, 327680, 1, 65543, 327680, 1, 65544, 327680, 1, 65545, 327680, 1, 65546, 327680, 1, 131074, 131072, 2, 131075, 131072, 2, 131076, 131072, 2, 131077, 131072, 2, 131078, 131072, 2, 131079, 131072, 2, 131080, 131072, 2, 131081, 131072, 2, 131082, 131072, 2, 196618, 131072, 2, 196617, 131072, 2, 196616, 131072, 2, 196615, 131072, 2, 196614, 131072, 2, 196613, 131072, 2, 196612, 131072, 2, 196611, 131072, 2, 196610, 131072, 2, 262146, 131072, 2, 262147, 131072, 2, 262148, 131072, 2, 262149, 131072, 2, 262150, 131072, 2, 262151, 131072, 2, 262152, 131072, 2, 262153, 131072, 2, 262154, 131072, 2, 327690, 131072, 2, 327689, 131072, 2, 327688, 131072, 2, 327687, 131072, 2, 327686, 131072, 2, 327685, 131072, 2, 327684, 131072, 2, 327683, 131072, 2, 327682, 131072, 2, 393219, 131072, 2, 393220, 131072, 2, 393221, 131072, 2, 393222, 131072, 2, 393223, 131072, 2, 393224, 131072, 2, 393225, 131072, 2, 393226, 131072, 2, 393218, 131072, 2, 458752, 0, 1, 524288, 0, 1, 589824, 0, 1, 655360, 0, 1, 720896, 0, 1, 786432, 0, 1, 851968, 0, 1, 917504, 0, 1, 458753, 65536, 2, 524289, 65536, 2, 589825, 65536, 2, 655361, 65536, 2, 720897, 65536, 2, 786433, 65536, 2, 851969, 65536, 2, 917505, 65536, 2, 458754, 131072, 2, 524290, 131072, 2, 589826, 131072, 2, 655362, 131072, 2, 720898, 131072, 2, 786434, 131072, 2, 851970, 131072, 2, 917506, 131072, 2, 458755, 131072, 2, 524291, 131072, 2, 589827, 131072, 2, 655363, 131072, 2, 720899, 131072, 2, 786435, 131072, 2, 851971, 131072, 2, 917507, 131072, 2, 458756, 131072, 2, 524292, 131072, 2, 589828, 131072, 2, 655364, 131072, 2, 720900, 131072, 2, 786436, 131072, 2, 851972, 131072, 2, 917508, 131072, 2, 458757, 131072, 2, 524293, 131072, 2, 589829, 131072, 2, 655365, 131072, 2, 720901, 131072, 2, 786437, 131072, 2, 851973, 131072, 2, 917509, 131072, 2, 458758, 131072, 2, 524294, 131072, 2, 589830, 131072, 2, 655366, 131072, 2, 720902, 131072, 2, 786438, 131072, 2, 851974, 131072, 2, 917510, 131072, 2, 458759, 131072, 2, 524295, 131072, 2, 589831, 131072, 2, 655367, 131072, 2, 720903, 131072, 2, 786439, 131072, 2, 851975, 131072, 2, 917511, 131072, 2, 458760, 131072, 2, 524296, 131072, 2, 589832, 131072, 2, 655368, 131072, 2, 720904, 131072, 2, 786440, 131072, 2, 851976, 131072, 2, 917512, 131072, 2, 458761, 131072, 2, 524297, 131072, 2, 589833, 131072, 2, 655369, 131072, 2, 720905, 131072, 2, 786441, 131072, 2, 851977, 131072, 2, 917513, 131072, 2, 458762, 131072, 2, 524298, 131072, 2, 589834, 131072, 2, 655370, 131072, 2, 720906, 131072, 2, 786442, 131072, 2, 851978, 131072, 2, 917514, 131072, 2, 131083, 131072, 2, 196619, 131072, 2, 262155, 131072, 2, 327691, 131072, 2, 393227, 131072, 2, 458763, 131072, 2, 524299, 131072, 2, 589835, 131072, 2, 655371, 131072, 2, 720907, 131072, 2, 786443, 131072, 2, 851979, 131072, 2, 917515, 131072, 2, 131084, 131072, 2, 196620, 131072, 2, 262156, 131072, 2, 327692, 131072, 2, 393228, 131072, 2, 458764, 131072, 2, 524300, 131072, 2, 589836, 131072, 2, 655372, 131072, 2, 720908, 131072, 2, 786444, 131072, 2, 851980, 131072, 2, 917516, 131072, 2, 131085, 131072, 2, 196621, 131072, 2, 262157, 131072, 2, 327693, 131072, 2, 393229, 131072, 2, 458765, 131072, 2, 524301, 131072, 2, 589837, 131072, 2, 655373, 131072, 2, 720909, 131072, 2, 786445, 131072, 2, 851981, 131072, 2, 917517, 131072, 2, 11, 327680, 0, 12, 327680, 0, 13, 327680, 0, 65547, 327680, 1, 65548, 327680, 1, 65549, 327680, 1, 131086, 131072, 2, 196622, 131072, 2, 262158, 131072, 2, 327694, 131072, 2, 393230, 131072, 2, 458766, 131072, 2, 524302, 131072, 2, 589838, 131072, 2, 655374, 131072, 2, 720910, 131072, 2, 786446, 131072, 2, 851982, 131072, 2, 917518, 131072, 2, 65550, 327680, 1, 14, 327680, 0, 131087, 0, 268435457, 196623, 0, 268435457, 262159, 0, 268435457, 327695, 0, 268435457, 393231, 0, 268435457, 458767, 0, 268435457, 524303, 0, 268435457, 589839, 0, 268435457, 655375, 0, 268435457, 720911, 0, 268435457, 786447, 0, 268435457, 851983, 0, 268435457, 917519, 0, 268435457, 983054, 0, 1610612737, 983053, 0, 1610612737, 983052, 0, 1610612737, 983051, 0, 1610612737, 983050, 0, 1610612737, 983049, 0, 1610612737, 983048, 0, 1610612737, 983047, 0, 1610612737, 983046, 0, 1610612737, 983045, 0, 1610612737, 983044, 0, 1610612737, 983043, 0, 1610612737, 983042, 0, 1610612737, 983041, 0, 1610612737, 65551, 0, 268435457, 15, 131072, 0, 983055, 131072, 0, 983040, 131072, 0)
+metadata/_edit_lock_ = true
+
+[node name="Orb2" parent="SecondWorld" instance=ExtResource("4_8llnb")]
+position = Vector2(112, 184)
+_is_in_first_world = false
+
+[node name="Water" parent="SecondWorld" instance=ExtResource("6_kbaqx")]
+position = Vector2(136, 56)
+_is_in_first_world = false
+
+[node name="Water4" parent="SecondWorld" instance=ExtResource("6_kbaqx")]
+position = Vector2(104, 56)
+_is_in_first_world = false
+
+[node name="Water5" parent="SecondWorld" instance=ExtResource("6_kbaqx")]
+position = Vector2(168, 56)
+_is_in_first_world = false
+
+[node name="Water6" parent="SecondWorld" instance=ExtResource("6_kbaqx")]
+position = Vector2(184, 56)
+_is_in_first_world = false
+
+[node name="Water7" parent="SecondWorld" instance=ExtResource("6_kbaqx")]
+position = Vector2(88, 56)
+_is_in_first_world = false
+
+[node name="Water9" parent="SecondWorld" instance=ExtResource("6_kbaqx")]
+position = Vector2(152, 72)
+_is_in_first_world = false
+
+[node name="Water10" parent="SecondWorld" instance=ExtResource("6_kbaqx")]
+position = Vector2(120, 72)
+_is_in_first_world = false
+
+[node name="Water11" parent="SecondWorld" instance=ExtResource("6_kbaqx")]
+position = Vector2(104, 72)
+_is_in_first_world = false
+
+[node name="Water12" parent="SecondWorld" instance=ExtResource("6_kbaqx")]
+position = Vector2(168, 72)
+_is_in_first_world = false
+
+[node name="Water13" parent="SecondWorld" instance=ExtResource("6_kbaqx")]
+position = Vector2(184, 72)
+_is_in_first_world = false
+
+[node name="Water14" parent="SecondWorld" instance=ExtResource("6_kbaqx")]
+position = Vector2(88, 72)
+_is_in_first_world = false
+
+[node name="Water15" parent="SecondWorld" instance=ExtResource("6_kbaqx")]
+position = Vector2(136, 88)
+_is_in_first_world = false
+
+[node name="Water18" parent="SecondWorld" instance=ExtResource("6_kbaqx")]
+position = Vector2(104, 88)
+_is_in_first_world = false
+
+[node name="Water19" parent="SecondWorld" instance=ExtResource("6_kbaqx")]
+position = Vector2(168, 88)
+_is_in_first_world = false
+
+[node name="Water20" parent="SecondWorld" instance=ExtResource("6_kbaqx")]
+position = Vector2(184, 88)
+_is_in_first_world = false
+
+[node name="Water21" parent="SecondWorld" instance=ExtResource("6_kbaqx")]
+position = Vector2(88, 88)
+_is_in_first_world = false
+
+[node name="Water22" parent="SecondWorld" instance=ExtResource("6_kbaqx")]
+position = Vector2(136, 104)
+_is_in_first_world = false
+
+[node name="Water23" parent="SecondWorld" instance=ExtResource("6_kbaqx")]
+position = Vector2(152, 104)
+_is_in_first_world = false
+
+[node name="Water24" parent="SecondWorld" instance=ExtResource("6_kbaqx")]
+position = Vector2(120, 104)
+_is_in_first_world = false
+
+[node name="Water25" parent="SecondWorld" instance=ExtResource("6_kbaqx")]
+position = Vector2(104, 104)
+_is_in_first_world = false
+
+[node name="Water26" parent="SecondWorld" instance=ExtResource("6_kbaqx")]
+position = Vector2(168, 104)
+_is_in_first_world = false
+
+[node name="Water27" parent="SecondWorld" instance=ExtResource("6_kbaqx")]
+position = Vector2(184, 104)
+_is_in_first_world = false
+
+[node name="Water28" parent="SecondWorld" instance=ExtResource("6_kbaqx")]
+position = Vector2(88, 104)
+_is_in_first_world = false
+
+[node name="PlayerSpawn" type="Node2D" parent="."]
+position = Vector2(136, 232)
+
+[node name="Block" parent="." instance=ExtResource("10_sw34t")]
+position = Vector2(120, 40)
+
+[node name="Block2" parent="." instance=ExtResource("10_sw34t")]
+position = Vector2(104, 40)
+
+[node name="Block3" parent="." instance=ExtResource("10_sw34t")]
+position = Vector2(88, 40)
+
+[node name="Block17" parent="." instance=ExtResource("10_sw34t")]
+position = Vector2(184, 40)
+
+[node name="Block18" parent="." instance=ExtResource("10_sw34t")]
+position = Vector2(168, 40)
+
+[node name="Block19" parent="." instance=ExtResource("10_sw34t")]
+position = Vector2(152, 40)
+
+[node name="Block4" parent="." instance=ExtResource("10_sw34t")]
+position = Vector2(72, 40)
+
+[node name="Block5" parent="." instance=ExtResource("10_sw34t")]
+position = Vector2(72, 56)
+
+[node name="Block6" parent="." instance=ExtResource("10_sw34t")]
+position = Vector2(72, 72)
+
+[node name="Block7" parent="." instance=ExtResource("10_sw34t")]
+position = Vector2(72, 88)
+
+[node name="Block8" parent="." instance=ExtResource("10_sw34t")]
+position = Vector2(72, 104)
+
+[node name="Block11" parent="." instance=ExtResource("10_sw34t")]
+position = Vector2(200, 56)
+
+[node name="Block20" parent="." instance=ExtResource("10_sw34t")]
+position = Vector2(200, 40)
+
+[node name="Block12" parent="." instance=ExtResource("10_sw34t")]
+position = Vector2(200, 72)
+
+[node name="Block13" parent="." instance=ExtResource("10_sw34t")]
+position = Vector2(200, 88)
+
+[node name="Block14" parent="." instance=ExtResource("10_sw34t")]
+position = Vector2(200, 104)
+
+[node name="Block15" parent="." instance=ExtResource("10_sw34t")]
+position = Vector2(136, 72)
+
+[node name="Crate3" parent="." instance=ExtResource("7_0bd1p")]
+position = Vector2(104, 144)
+
+[node name="Crate4" parent="." instance=ExtResource("7_0bd1p")]
+position = Vector2(136, 144)
+
+[node name="Crate5" parent="." instance=ExtResource("7_0bd1p")]
+position = Vector2(168, 144)
