@@ -205,6 +205,11 @@ metadata/_edit_lock_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 67.0
+offset_bottom = 23.0
+text = "[R]estart"
+
 [node name="WorldFilter" type="ColorRect" parent="CanvasLayer"]
 self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
