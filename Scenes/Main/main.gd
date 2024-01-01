@@ -5,12 +5,14 @@ class_name Main
 @export_group("Debug")
 @export var debug_level_index: int = -1
 
-
 var current_level_index: int = 0
 var current_level: Level = null
 
+@onready var restart_label: Label = $CanvasLayer/RestartLabel
+
 
 func _ready():
+	restart_label.visible = false
 	if debug_level_index != -1:
 		_start_level(debug_level_index)
 	else:
@@ -28,6 +30,7 @@ func _process(_delta: float) -> void:
 	
 	
 func _start_level(index: int) -> void:
+	restart_label.visible = true
 	current_level = level_scenes[index].instantiate() as Level
 	add_child(current_level)
 	current_level.connect("finished", _on_level_completed)
