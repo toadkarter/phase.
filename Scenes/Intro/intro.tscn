@@ -1,0 +1,289 @@
+[gd_scene load_steps=11 format=3 uid="uid://bukg728h2f7uu"]
+
+[ext_resource type="Script" path="res://Scenes/Intro/intro.gd" id="1_op3if"]
+[ext_resource type="Texture2D" uid="uid://bf0gduta6jods" path="res://Assets/Art/Tilesets/tileset-world.png" id="3_gbndl"]
+[ext_resource type="FontFile" uid="uid://bhgcaejch6ij" path="res://Assets/Fonts/Fortzilla-Regular.otf" id="3_t27ge"]
+[ext_resource type="PackedScene" uid="uid://bgx0u804veai4" path="res://Scenes/Player/player.tscn" id="4_o7l3u"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4buj0"]
+texture = ExtResource("3_gbndl")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+0:16/0 = 0
+1:16/0 = 0
+2:16/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ufk6g"]
+sources/0 = SubResource("TileSetAtlasSource_4buj0")
+
+[sub_resource type="Animation" id="Animation_pm5vo"]
+resource_name = "fade_carousel"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TitleLabel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubtitleLabel:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_y2ras"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TitleLabel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubtitleLabel:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Player:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(136, 208)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_djxao"]
+resource_name = "intro_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(136, 208), Vector2(136, 184)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xng3e"]
+_data = {
+"RESET": SubResource("Animation_y2ras"),
+"fade_carousel": SubResource("Animation_pm5vo"),
+"intro_animation": SubResource("Animation_djxao")
+}
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_op3if")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_ufk6g")
+format = 2
+layer_0/tile_data = PackedInt32Array(983041, 0, 5, 983040, 0, 5, 983042, 0, 5, 983043, 0, 5, 983044, 0, 5, 983045, 0, 5, 983046, 0, 5, 983047, 0, 5, 983048, 0, 5, 983049, 0, 5, 983050, 0, 5, 983051, 0, 5, 983052, 0, 5, 983053, 0, 5, 983054, 0, 5, 983055, 0, 5, 917519, 0, 5, 917518, 0, 5, 917517, 0, 5, 917516, 0, 5, 917515, 0, 5, 917514, 0, 5, 917513, 0, 5, 917512, 0, 5, 917511, 0, 5, 917510, 0, 5, 917509, 0, 5, 917508, 0, 5, 917507, 0, 5, 917506, 0, 5, 917505, 0, 5, 917504, 0, 5, 851983, 0, 5, 851982, 0, 5, 851981, 0, 5, 851980, 0, 5, 851979, 0, 5, 851978, 0, 5, 851977, 0, 5, 851976, 0, 5, 851975, 0, 5, 851974, 0, 5, 851973, 0, 5, 851972, 0, 5, 851971, 0, 5, 851970, 0, 5, 851969, 0, 5, 851968, 0, 5, 786447, 0, 5, 786446, 0, 5, 786445, 0, 5, 786444, 0, 5, 786443, 0, 5, 786442, 0, 5, 786441, 0, 5, 786440, 0, 5, 786439, 0, 5, 786438, 0, 5, 786437, 0, 5, 786436, 0, 5, 786435, 0, 5, 786434, 0, 5, 786433, 0, 5, 786432, 0, 5, 720896, 0, 5, 720897, 0, 5, 720898, 0, 5, 720899, 0, 5, 720900, 0, 5, 720901, 0, 5, 720902, 0, 5, 720903, 0, 5, 720904, 0, 5, 720905, 0, 5, 720906, 0, 5, 720907, 0, 5, 720908, 0, 5, 720909, 0, 5, 720910, 0, 5, 720911, 0, 5, 589836, 262144, 5, 589837, 262144, 5, 589838, 262144, 5, 589827, 262144, 5, 524291, 262144, 5, 524300, 262144, 5, 524301, 262144, 5, 524302, 262144, 5, 458766, 262144, 5, 458755, 262144, 5, 458764, 262144, 5, 458765, 262144, 5, 393229, 262144, 5, 393228, 262144, 5, 393227, 262144, 5, 393226, 262144, 5, 393225, 262144, 5, 393224, 262144, 5, 393223, 262144, 5, 393222, 262144, 5, 393221, 262144, 5, 393220, 262144, 5, 393219, 262144, 5, 655360, 0, 5, 655361, 0, 5, 655362, 0, 5, 655363, 0, 5, 655372, 0, 5, 655373, 0, 5, 655374, 0, 5, 655375, 0, 5, 589824, 262144, 5, 524288, 262144, 5, 458752, 262144, 5, 393216, 262144, 5, 327680, 262144, 5, 327683, 262144, 5, 327684, 262144, 5, 327685, 262144, 5, 327686, 262144, 5, 327687, 262144, 5, 327688, 262144, 5, 327689, 262144, 5, 327690, 262144, 5, 327691, 262144, 5, 327692, 262144, 5, 327693, 262144, 5, 589839, 262144, 5, 524303, 262144, 5, 458767, 262144, 5, 393231, 262144, 5, 327695, 262144, 5, 262159, 262144, 5, 196623, 262144, 5, 131087, 262144, 5, 65551, 262144, 5, 15, 262144, 5, 14, 262144, 5, 13, 262144, 5, 12, 262144, 5, 11, 262144, 5, 10, 262144, 5, 9, 262144, 5, 8, 262144, 5, 7, 262144, 5, 6, 262144, 5, 5, 262144, 5, 4, 262144, 5, 3, 262144, 5, 2, 262144, 5, 1, 262144, 5, 0, 262144, 5, 65536, 262144, 5, 131072, 262144, 5, 196608, 262144, 5, 262144, 262144, 5, 65537, 262144, 5, 65538, 262144, 5, 65539, 262144, 5, 65540, 262144, 5, 65550, 262144, 5, 65549, 262144, 5, 65548, 262144, 5, 65547, 262144, 5, 65546, 262144, 5, 65545, 262144, 5, 65544, 262144, 5, 65543, 262144, 5, 65542, 262144, 5, 65541, 262144, 5, 131073, 262144, 5, 131074, 262144, 5, 131082, 262144, 5, 131083, 262144, 5, 131084, 262144, 5, 131085, 262144, 5, 131086, 262144, 5, 131081, 262144, 5, 131080, 262144, 5, 131079, 262144, 5, 131078, 262144, 5, 131077, 262144, 5, 131076, 262144, 5, 131075, 262144, 5, 196609, 262144, 5, 196610, 262144, 5, 196611, 262144, 5, 196612, 262144, 5, 196613, 262144, 5, 196614, 262144, 5, 196615, 262144, 5, 196616, 262144, 5, 196622, 262144, 5, 196621, 262144, 5, 196620, 262144, 5, 196619, 262144, 5, 196618, 262144, 5, 196617, 262144, 5, 327694, 262144, 5, 393230, 262144, 5, 327682, 262144, 5, 393218, 262144, 5, 458754, 262144, 5, 524290, 262144, 5, 589826, 262144, 5, 262145, 262144, 5, 327681, 262144, 5, 393217, 262144, 5, 458753, 262144, 5, 524289, 262144, 5, 589825, 262144, 5, 262146, 262144, 5, 262147, 262144, 5, 262148, 262144, 5, 262149, 262144, 5, 262150, 262144, 5, 262151, 262144, 5, 262152, 262144, 5, 262153, 262144, 5, 262154, 262144, 5, 262155, 262144, 5, 262156, 262144, 5, 262157, 262144, 5, 262158, 262144, 5, 458757, 0, 14, 524293, 0, 15, 589829, 0, 16, 655365, 0, 16, 458758, 65536, 14, 524294, 65536, 15, 589830, 196608, 12, 655366, 196608, 13, 458759, 65536, 14, 524295, 65536, 15, 589831, 0, 12, 655367, 0, 13, 458760, 65536, 14, 524296, 65536, 15, 589832, 65536, 12, 655368, 65536, 13, 458761, 65536, 14, 524297, 65536, 15, 589833, 131072, 12, 655369, 131072, 13, 458762, 65536, 14, 524298, 65536, 15, 589834, 196608, 12, 655370, 196608, 13, 458763, 131072, 14, 524299, 131072, 15, 589835, 131072, 16, 655371, 131072, 16, 655364, 0, 5, 524292, 262144, 5, 589828, 262144, 5, 458756, 262144, 5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_top = 8.0
+offset_right = 107.0
+offset_bottom = 109.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.756863, 0.607843, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.482353, 0.384314, 0, 1)
+theme_override_fonts/font = ExtResource("3_t27ge")
+theme_override_font_sizes/font_size = 60
+text = "phase."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -72.0
+offset_right = 99.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.756863, 0.607843, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.482353, 0.384314, 0, 1)
+theme_override_fonts/font = ExtResource("3_t27ge")
+theme_override_font_sizes/font_size = 20
+text = "-- press any key --"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+"": SubResource("AnimationLibrary_xng3e")
+}
+
+[node name="Player" parent="." instance=ExtResource("4_o7l3u")]
+position = Vector2(136, 208)
+disable_movement = true

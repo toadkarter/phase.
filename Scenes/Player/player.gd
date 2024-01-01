@@ -3,6 +3,7 @@ class_name Player
 
 @export var speed: float = 100.0
 @export var push_force: float = 100.0
+@export var disable_movement: bool = false
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 
@@ -11,6 +12,8 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float):
+	if disable_movement:
+		return
 	_handle_input(delta)
 	move_and_slide()
 	_handle_collisions()

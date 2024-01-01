@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://co1d8mwegtexv"]
+[gd_scene load_steps=15 format=3 uid="uid://co1d8mwegtexv"]
 
 [ext_resource type="Script" path="res://Scenes/Main/main.gd" id="1_mg7jt"]
 [ext_resource type="PackedScene" uid="uid://kin5wylxva7p" path="res://Scenes/Levels/serpent.tscn" id="2_4btxv"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://0n7t2wenhuv3" path="res://Scenes/Levels/the_key.tscn" id="2_kcv4e"]
 [ext_resource type="PackedScene" uid="uid://bjdjsvg1oe5pe" path="res://Scenes/Levels/blocked_out.tscn" id="2_p27l3"]
 [ext_resource type="PackedScene" uid="uid://li1i4cep00wh" path="res://Scenes/Levels/overboard.tscn" id="2_rqdoi"]
+[ext_resource type="PackedScene" uid="uid://bukg728h2f7uu" path="res://Scenes/Intro/intro.tscn" id="2_vkabv"]
 [ext_resource type="PackedScene" uid="uid://de0m45w22068p" path="res://Scenes/Levels/maze.tscn" id="2_x54vr"]
 [ext_resource type="PackedScene" uid="uid://dy5hfhkptfaxe" path="res://Scenes/Levels/teacher.tscn" id="2_x80m0"]
 [ext_resource type="PackedScene" uid="uid://cohou0jl01fwh" path="res://Scenes/Levels/conveyor.tscn" id="2_yqn4g"]
@@ -16,6 +17,7 @@
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_mg7jt")
+intro_scene = ExtResource("2_vkabv")
 level_scenes = Array[PackedScene]([ExtResource("2_x80m0"), ExtResource("3_g0che"), ExtResource("2_kcv4e"), ExtResource("2_x54vr"), ExtResource("2_p27l3"), ExtResource("2_rqdoi"), ExtResource("2_gpmit"), ExtResource("2_d4tby"), ExtResource("2_285v6"), ExtResource("2_4btxv"), ExtResource("2_yqn4g")])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

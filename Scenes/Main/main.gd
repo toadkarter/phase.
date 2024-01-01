@@ -1,9 +1,12 @@
 extends Node2D
 class_name Main
 
+@export var intro_scene: PackedScene
 @export var level_scenes: Array[PackedScene]
 @export_group("Debug")
 @export var debug_level_index: int = -1
+
+var intro: Intro = null
 
 var current_level_index: int = 0
 var current_level: Level = null
@@ -13,11 +16,29 @@ var current_level: Level = null
 
 func _ready():
 	restart_label.visible = false
+	_init_intro()
+		
+		
+func _init_intro() -> void:
+	intro = intro_scene.instantiate() as Intro
+	add_child(intro)
+	intro.connect("finished", _on_intro_finished)
+	
+	
+func _on_intro_finished() -> void:
+	_init_levels()
+
+
+func _init_levels() -> void:
+	if intro != null:
+		intro.queue_free()
+		remove_child(intro)
+	
 	if debug_level_index != -1:
 		_start_level(debug_level_index)
 	else:
 		_start_level(current_level_index)
-		
+	
 		
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("quit") and OS.get_name() != "Web":
