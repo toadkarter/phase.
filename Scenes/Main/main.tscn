@@ -15,4 +15,4 @@
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_mg7jt")
-level_scenes = Array[PackedScene]([ExtResource("2_4btxv"), ExtResource("2_285v6"), ExtResource("2_rqdoi"), ExtResource("2_gpmit"), ExtResource("2_x80m0"), ExtResource("3_g0che"), ExtResource("2_kcv4e"), ExtResource("2_p27l3"), ExtResource("2_x54vr"), ExtResource("2_d4tby"), ExtResource("2_yqn4g")])
+level_scenes = Array[PackedScene]([ExtResource("2_x80m0"), ExtResource("3_g0che"), ExtResource("2_kcv4e"), ExtResource("2_x54vr"), ExtResource("2_p27l3"), ExtResource("2_rqdoi"), ExtResource("2_gpmit"), ExtResource("2_d4tby"), ExtResource("2_285v6"), ExtResource("2_4btxv"), ExtResource("2_yqn4g")])
