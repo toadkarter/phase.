@@ -104,7 +104,7 @@ sources/0 = SubResource("TileSetAtlasSource_rnmy4")
 [node name="Level" type="Node2D" node_paths=PackedStringArray("orbs", "door", "first_world", "second_world", "player_spawn")]
 modulate = Color(0, 0, 0, 1)
 script = ExtResource("1_sjbwh")
-orbs = [NodePath("FirstWorld/Orb1"), NodePath("SecondWorld/Orb2")]
+orbs = [NodePath("FirstWorld/Orb1"), NodePath("SecondWorld/Orb2"), NodePath("FirstWorld/Orb2"), NodePath("FirstWorld/Orb3")]
 player_scene = ExtResource("2_53s3u")
 door = NodePath("FirstWorld/Door")
 first_world = NodePath("FirstWorld")
@@ -124,6 +124,12 @@ switch = NodePath("../Switch")
 
 [node name="Orb1" parent="FirstWorld" instance=ExtResource("4_heh17")]
 position = Vector2(136, 104)
+
+[node name="Orb2" parent="FirstWorld" instance=ExtResource("4_heh17")]
+position = Vector2(120, 104)
+
+[node name="Orb3" parent="FirstWorld" instance=ExtResource("4_heh17")]
+position = Vector2(152, 104)
 
 [node name="Switch" parent="FirstWorld" instance=ExtResource("5_ho5xu")]
 position = Vector2(136, 200)

@@ -13,6 +13,7 @@ const LEVEL_DISPLACEMENT: float = 256.0
 @export var player_spawn: Node2D
 
 var is_in_first_world: bool = true
+var is_changing_worlds: bool = false
 var first_world_objects: Array[Node2D]
 var second_world_objects: Array[Node2D]
 
@@ -34,6 +35,10 @@ func _ready():
 
 
 func _on_changed_worlds() -> void:
+	if is_changing_worlds:
+		return
+		
+	is_changing_worlds = true
 	var length: float = hud.get_world_fade_animation_length()
 	if is_in_first_world:
 		hud.start_second_world()
@@ -43,6 +48,7 @@ func _on_changed_worlds() -> void:
 		hud.start_first_world()
 		await get_tree().create_timer(length).timeout
 		_setup_first_world()
+	is_changing_worlds = false
 
 
 func _init_objects() -> void:
