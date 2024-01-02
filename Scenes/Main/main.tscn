@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://co1d8mwegtexv"]
+[gd_scene load_steps=17 format=3 uid="uid://co1d8mwegtexv"]
 
 [ext_resource type="Script" path="res://Scenes/Main/main.gd" id="1_mg7jt"]
 [ext_resource type="PackedScene" uid="uid://kin5wylxva7p" path="res://Scenes/Levels/serpent.tscn" id="2_4btxv"]
@@ -12,13 +12,16 @@
 [ext_resource type="PackedScene" uid="uid://de0m45w22068p" path="res://Scenes/Levels/maze.tscn" id="2_x54vr"]
 [ext_resource type="PackedScene" uid="uid://dy5hfhkptfaxe" path="res://Scenes/Levels/teacher.tscn" id="2_x80m0"]
 [ext_resource type="PackedScene" uid="uid://cohou0jl01fwh" path="res://Scenes/Levels/conveyor.tscn" id="2_yqn4g"]
+[ext_resource type="PackedScene" uid="uid://du62xpr37jv0v" path="res://Scenes/Levels/direction.tscn" id="3_dt0x5"]
 [ext_resource type="PackedScene" uid="uid://b2eu7iqggo4u7" path="res://Scenes/Levels/backtrack.tscn" id="3_g0che"]
 [ext_resource type="FontFile" uid="uid://b6v3k1hf675gl" path="res://Assets/Fonts/Uncle Lee 3x6.ttf" id="13_jnlct"]
+[ext_resource type="PackedScene" uid="uid://co833i7ldmomv" path="res://Scenes/Outro/outro.tscn" id="15_qhpfr"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_mg7jt")
 intro_scene = ExtResource("2_vkabv")
-level_scenes = Array[PackedScene]([ExtResource("2_x80m0"), ExtResource("3_g0che"), ExtResource("2_kcv4e"), ExtResource("2_x54vr"), ExtResource("2_p27l3"), ExtResource("2_rqdoi"), ExtResource("2_gpmit"), ExtResource("2_d4tby"), ExtResource("2_285v6"), ExtResource("2_4btxv"), ExtResource("2_yqn4g")])
+level_scenes = Array[PackedScene]([ExtResource("2_x80m0"), ExtResource("3_g0che"), ExtResource("2_kcv4e"), ExtResource("3_dt0x5"), ExtResource("2_x54vr"), ExtResource("2_p27l3"), ExtResource("2_rqdoi"), ExtResource("2_gpmit"), ExtResource("2_d4tby"), ExtResource("2_285v6"), ExtResource("2_4btxv"), ExtResource("2_yqn4g")])
+outro_scene = ExtResource("15_qhpfr")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

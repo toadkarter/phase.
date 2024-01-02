@@ -3,6 +3,7 @@ class_name Main
 
 @export var intro_scene: PackedScene
 @export var level_scenes: Array[PackedScene]
+@export var outro_scene: PackedScene
 @export_group("Debug")
 @export var debug_level_index: int = -1
 
@@ -16,14 +17,22 @@ var current_level: Level = null
 
 func _ready():
 	restart_label.visible = false
-	_init_intro()
+	_init_outro()
+	#_init_intro()
 		
 		
 func _init_intro() -> void:
 	intro = intro_scene.instantiate() as Intro
 	add_child(intro)
 	intro.connect("finished", _on_intro_finished)
-	
+
+
+func _init_outro() -> void:
+	if current_level != null:
+		remove_child(current_level)
+		current_level.queue_free()
+	var outro = outro_scene.instantiate()
+	add_child(outro)
 	
 func _on_intro_finished() -> void:
 	_init_levels()
@@ -62,7 +71,7 @@ func _on_level_completed() -> void:
 	remove_child(current_level)
 	current_level.queue_free()
 	if current_level_index >= level_scenes.size():
-		print("Game Finished")
+		_init_outro()
 		return
 		
 	_start_level(current_level_index)

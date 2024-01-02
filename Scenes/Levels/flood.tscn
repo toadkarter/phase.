@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d1okwysixuyxa"]
+[gd_scene load_steps=15 format=3 uid="uid://d1okwysixuyxa"]
 
 [ext_resource type="Script" path="res://Scenes/Level/level.gd" id="1_03e6l"]
 [ext_resource type="Texture2D" uid="uid://dnm16ys4q17n8" path="res://Assets/Art/Tilesets/dungeon-tileset.png" id="2_bxrsy"]
@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://n57kh5x6frly" path="res://Scenes/Items/Crate/crate.tscn" id="7_0bd1p"]
 [ext_resource type="PackedScene" uid="uid://bg31smg0omldk" path="res://Scenes/Environment/Rock/rock.tscn" id="8_sebqk"]
 [ext_resource type="PackedScene" uid="uid://c4i7qaom5236r" path="res://Scenes/Environment/Block/block.tscn" id="10_sw34t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ssbgy"]
+size = Vector2(144, 16.1296)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rnmy4"]
 texture = ExtResource("2_bxrsy")
@@ -126,6 +129,10 @@ position = Vector2(160, 184)
 
 [node name="Rock" parent="FirstWorld" instance=ExtResource("8_sebqk")]
 position = Vector2(136, 40)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FirstWorld/Rock"]
+position = Vector2(0, 0.0648232)
+shape = SubResource("RectangleShape2D_ssbgy")
 
 [node name="SecondWorld" type="Node2D" parent="."]
 modulate = Color(1, 1, 1, 0.513726)

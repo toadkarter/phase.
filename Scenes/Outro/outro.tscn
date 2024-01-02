@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://co833i7ldmomv"]
+
+[ext_resource type="Script" path="res://Scenes/Outro/outro.gd" id="1_gki4o"]
+[ext_resource type="FontFile" uid="uid://bhgcaejch6ij" path="res://Assets/Fonts/Fortzilla-Regular.otf" id="1_hvn82"]
+[ext_resource type="FontFile" uid="uid://b6v3k1hf675gl" path="res://Assets/Fonts/Uncle Lee 3x6.ttf" id="2_xofod"]
+
+[node name="Outro" type="Node2D"]
+script = ExtResource("1_gki4o")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -88.0
+offset_right = 95.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.756863, 0.607843, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.482353, 0.384314, 0, 1)
+theme_override_fonts/font = ExtResource("1_hvn82")
+theme_override_font_sizes/font_size = 60
+text = "phase."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = -9.0
+offset_right = 99.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_xofod")
+theme_override_font_sizes/font_size = 22
+text = "-- a game by toadkarter --"
+
+[node name="Label3" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = 56.0
+offset_right = 98.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_xofod")
+theme_override_font_sizes/font_size = 24
+text = "Thank you for playing!"
+horizontal_alignment = 1
