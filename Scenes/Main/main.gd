@@ -17,8 +17,7 @@ var current_level: Level = null
 
 func _ready():
 	restart_label.visible = false
-	_init_outro()
-	#_init_intro()
+	_init_intro()
 		
 		
 func _init_intro() -> void:
