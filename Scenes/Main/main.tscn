@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://co1d8mwegtexv"]
+[gd_scene load_steps=18 format=3 uid="uid://co1d8mwegtexv"]
 
 [ext_resource type="Script" path="res://Scenes/Main/main.gd" id="1_mg7jt"]
 [ext_resource type="PackedScene" uid="uid://kin5wylxva7p" path="res://Scenes/Levels/serpent.tscn" id="2_4btxv"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://b2eu7iqggo4u7" path="res://Scenes/Levels/backtrack.tscn" id="3_g0che"]
 [ext_resource type="FontFile" uid="uid://b6v3k1hf675gl" path="res://Assets/Fonts/Uncle Lee 3x6.ttf" id="13_jnlct"]
 [ext_resource type="PackedScene" uid="uid://co833i7ldmomv" path="res://Scenes/Outro/outro.tscn" id="15_qhpfr"]
+[ext_resource type="AudioStream" uid="uid://ctsuwd4pk6wye" path="res://Assets/Music/bgm.ogg" id="17_s12sc"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_mg7jt")
@@ -34,3 +35,6 @@ theme_override_fonts/font = ExtResource("13_jnlct")
 text = "[R]estart"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_s12sc")

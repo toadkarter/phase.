@@ -13,6 +13,7 @@ var current_level_index: int = 0
 var current_level: Level = null
 
 @onready var restart_label: Label = $CanvasLayer/RestartLabel
+@onready var bgm_player: AudioStreamPlayer2D = $BGM
 
 
 func _ready():
@@ -38,6 +39,8 @@ func _on_intro_finished() -> void:
 
 
 func _init_levels() -> void:
+	bgm_player.play()
+	
 	if intro != null:
 		intro.queue_free()
 		remove_child(intro)

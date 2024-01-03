@@ -5,6 +5,7 @@ class_name Hud
 @onready var world_filter: ColorRect = $WorldFilter
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var world_fade: AnimationPlayer = $WorldFade
+@onready var phase_sfx: AudioStreamPlayer2D = $SFX
 
 
 func _ready() -> void:
@@ -33,3 +34,7 @@ func get_world_fade_animation_length() -> float:
 
 func get_level_start_animation_length() -> float:
 	return world_fade.get_animation("fade_in").length
+	
+	
+func play_phase_sfx() -> void:
+	phase_sfx.play()

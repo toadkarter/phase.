@@ -11,6 +11,7 @@ var is_open: bool = true
 @onready var opened_sprite: Sprite2D = $OpenedSprite
 @onready var closed_sprite: Sprite2D = $ClosedDoor/ClosedSprite
 @onready var closed_door_collider: CollisionShape2D = $ClosedDoor/ClosedDoorCollider
+@onready var sfx_player: AudioStreamPlayer2D = $SFX
 
 func _ready():
 	_open_door()
@@ -51,11 +52,13 @@ func _init_switch() -> void:
 func _handle_door_open() -> void:
 	if !is_open:
 		_open_door()
+		sfx_player.play()
 	
 
 func _handle_door_closed() -> void:
 	if is_open:
 		_close_door()
+		sfx_player.play()
 		
 		
 func _set_closed_door_collider(on: bool) -> void:

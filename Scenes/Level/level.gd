@@ -18,8 +18,6 @@ var first_world_objects: Array[Node2D]
 var second_world_objects: Array[Node2D]
 
 @onready var hud: Hud = $HUD
-# @onready var animation_player: AnimationPlayer = $CanvasLayer/AnimationPlayer
-# @onready var world_fade: AnimationPlayer = $CanvasLayer/WorldFade
 
 
 func _ready():
@@ -41,10 +39,12 @@ func _on_changed_worlds() -> void:
 	is_changing_worlds = true
 	var length: float = hud.get_world_fade_animation_length()
 	if is_in_first_world:
+		hud.play_phase_sfx()
 		hud.start_second_world()
 		await get_tree().create_timer(length).timeout
 		_setup_second_world()
 	else:
+		hud.play_phase_sfx()
 		hud.start_first_world()
 		await get_tree().create_timer(length).timeout
 		_setup_first_world()

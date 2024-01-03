@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dm83n38e772pd"]
+[gd_scene load_steps=10 format=3 uid="uid://dm83n38e772pd"]
 
 [ext_resource type="Material" uid="uid://cxdn0w8ikp53i" path="res://Assets/Shaders/black_and_white.tres" id="1_2ayol"]
 [ext_resource type="Script" path="res://Scenes/Hud/level_hud.gd" id="1_gacb0"]
+[ext_resource type="AudioStream" uid="uid://d2hn6eom44ja" path="res://Assets/Music/phase.wav" id="3_ynmfl"]
 
 [sub_resource type="Animation" id="Animation_fbx3o"]
 length = 0.001
@@ -90,3 +91,6 @@ root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_vhldl")
 }
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ynmfl")
